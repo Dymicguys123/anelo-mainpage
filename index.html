@@ -977,6 +977,106 @@
             to { opacity: 1; }
         }
         
+        /* Comparison Section Styles */
+        .comparison-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+            margin: 40px auto;
+            max-width: 1000px;
+        }
+        
+        .comparison-side {
+            flex: 1;
+            min-width: 300px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        
+        .comparison-side.negative {
+            background-color: rgba(50, 50, 50, 0.9);
+            color: #ccc;
+        }
+        
+        .comparison-side.positive {
+            background-color: rgba(255, 159, 70, 0.15);
+            color: white;
+        }
+        
+        .comparison-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .comparison-side.negative .comparison-title {
+            color: #999;
+        }
+        
+        .comparison-side.positive .comparison-title {
+            color: var(--primary-color);
+        }
+        
+        .comparison-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .comparison-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+            flex-grow: 1;
+        }
+        
+        .comparison-list li {
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .comparison-list li::before {
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+        
+        .comparison-side.negative .comparison-list li::before {
+            content: "✕";
+            color: #ff6b6b;
+        }
+        
+        .comparison-side.positive .comparison-list li::before {
+            content: "✓";
+            color: #40c057;
+        }
+        
+        .comparison-cta {
+            margin-top: auto;
+            text-align: center;
+        }
+        
+        .comparison-cta .btn-primary {
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(255, 159, 70, 0.3);
+        }
+        
+        .comparison-highlight {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .mobile-menu-btn {
@@ -1055,6 +1155,15 @@
             
             .gallery-prev {
                 left: -50px;
+            }
+            
+            .comparison-container {
+                flex-direction: column;
+            }
+            
+            .comparison-divider {
+                height: 3px;
+                width: 100%;
             }
         }
     </style>
@@ -1633,12 +1742,32 @@
                 <img src="https://cdn.jsdelivr.net/gh/davidnetizen/hosting@master/ai-youtube-stats.jpg" alt="유튜브 통계" class="w-full">
             </div>
             
-            <div class="max-w-3xl mx-auto bg-gray-800 p-8 rounded-lg mb-10">
-                <p class="text-xl mb-3">성의없는 AI로 외면받으실건가요?</p>
-                <p class="text-xl mb-3">아님, 압도적인 비주얼과 퀄리티로</p>
-                <p class="text-xl mb-3">돈으로 바꿀 수 없는</p>
-                <p class="text-xl mb-10">소비자의 시선과 인지도를 사로잡으실건가요?</p>
+            <!-- 개선된 비교 섹션 -->
+            <div class="comparison-container">
+                <div class="comparison-side negative">
+                    <h3 class="comparison-title">성의없는 AI로 외면받으실건가요?</h3>
+                    <img src="https://cdn.jsdelivr.net/gh/davidnetizen/hosting@master/low-quality-ai.jpg" alt="저품질 AI 이미지" class="comparison-image">
+                    <ul class="comparison-list">
+                        <li>부자연스러운 표정과 디테일로 인한 신뢰도 하락</li>
+                        <li>일관성 없는 이미지로 브랜드 가치 손상</li>
+                        <li>'AI 티'가 나서 소비자에게 외면받는 광고</li>
+                        <li>경쟁사와의 비주얼 차별성 부재</li>
+                    </ul>
+                </div>
                 
+                <div class="comparison-side positive">
+                    <h3 class="comparison-title">압도적인 비주얼과 퀄리티로<br>소비자의 시선을 사로잡으세요</h3>
+                    <img src="https://cdn.jsdelivr.net/gh/davidnetizen/hosting@master/high-quality-ai.jpg" alt="고품질 AI 이미지" class="comparison-image">
+                    <ul class="comparison-list">
+                        <li>실제 모델과 구분할 수 없는 자연스러운 디테일</li>
+                        <li>일관된 브랜드 이미지로 인지도 상승</li>
+                        <li>소비자의 시선을 사로잡는 매력적인 비주얼</li>
+                        <li>경쟁사와 확실한 비주얼 차별화 확보</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="comparison-cta mt-10">
                 <a href="#contact" class="btn-primary">지금 상담하기</a>
             </div>
         </div>
@@ -2001,7 +2130,7 @@
                     </div>
                     <div>
                         <h4 class="text-lg font-bold">이메일</h4>
-                        <p>phoenix7jn@gmail.com</p>
+                        <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4e3e26212b2027367924200e29232f2722602d2123">[email&#160;protected]</a></p>
                     </div>
                 </div>
                 
@@ -2053,7 +2182,7 @@
         </div>
     </footer>
     
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Header scroll effect
         window.addEventListener('scroll', function() {
             const header = document.querySelector('.header');
