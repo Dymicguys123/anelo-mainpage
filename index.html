@@ -10,9 +10,9 @@
     <style>
         :root {
             --primary-color: #FF9F46;
-            --dark-bg: #1e1e1e;
-            --text-color: #ffffff;
-            --text-secondary: #b3b3b3;
+            --dark-bg: #FFFFFF;
+            --text-color: #333333;
+            --text-secondary: #666666;
         }
         
         body {
@@ -60,7 +60,7 @@
         }
         
         .header {
-            background-color: rgba(30, 30, 30, 0.95);
+            background-color: rgba(255, 255, 255, 0.95);
             position: fixed;
             top: 0;
             left: 0;
@@ -74,7 +74,7 @@
         
         .header.scrolled {
             padding: 10px 0;
-            background-color: rgba(30, 30, 30, 0.98);
+            background-color: rgba(255, 255, 255, 0.98);
         }
         
         .nav-container {
@@ -122,7 +122,7 @@
         
         .hero-section {
             padding: 180px 0 100px;
-            background: linear-gradient(rgba(30, 30, 30, 0.8), var(--dark-bg)), url('https://cdn.jsdelivr.net/gh/heroicons/heroicons/optimized/solid/camera.svg');
+            background: linear-gradient(rgba(255, 255, 255, 0.8), var(--dark-bg)), url('https://cdn.jsdelivr.net/gh/heroicons/heroicons/optimized/solid/camera.svg');
             background-size: cover;
             background-position: center;
             background-blend-mode: overlay;
@@ -142,16 +142,16 @@
             min-width: 200px;
             text-align: center;
             padding: 30px 20px;
-            background-color: rgba(255, 255, 255, 0.05);
+            background-color: #FFFFFF;
             border-radius: 10px;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
         }
         
         .stat-item:hover {
             transform: translateY(-5px);
-            background-color: rgba(255, 255, 255, 0.08);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            background-color: #FFFFFF;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
         
         .stat-number {
@@ -174,17 +174,17 @@
         }
         
         .review-card {
-            background-color: rgba(255, 255, 255, 0.05);
+            background-color: #FFFFFF;
             border-radius: 10px;
             padding: 25px;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
         }
         
         .review-card:hover {
-            background-color: rgba(255, 255, 255, 0.08);
+            background-color: #FFFFFF;
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
         
         .review-header {
@@ -197,12 +197,12 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background-color: #333;
+            background-color: #f0f0f0;
             margin-right: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #ddd;
+            color: #666;
             font-size: 1.5rem;
         }
         
@@ -230,7 +230,7 @@
         }
         
         .portfolio-section {
-            background-color: rgba(0, 0, 0, 0.2);
+            background-color: #F0F0F0;
         }
         
         .portfolio-tabs {
@@ -244,7 +244,7 @@
         
         .portfolio-tab {
             padding: 8px 20px;
-            background-color: rgba(255, 255, 255, 0.05);
+            background-color: rgba(0, 0, 0, 0.05);
             border-radius: 50px;
             color: var(--text-secondary);
             cursor: pointer;
@@ -258,7 +258,7 @@
         }
         
         .portfolio-tab:hover:not(.active) {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(0, 0, 0, 0.1);
         }
         
         .portfolio-grid {
@@ -268,16 +268,16 @@
         }
         
         .portfolio-item {
-            background-color: rgba(255, 255, 255, 0.05);
+            background-color: #FFFFFF;
             border-radius: 10px;
             overflow: hidden;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
         }
         
         .portfolio-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
         
         .portfolio-image {
@@ -297,19 +297,19 @@
         }
         
         .service-card {
-            background-color: rgba(255, 255, 255, 0.05);
+            background-color: #FFFFFF;
             border-radius: 10px;
             padding: 30px;
             margin-bottom: 30px;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
             height: 100%;
         }
         
         .service-card:hover {
-            background-color: rgba(255, 255, 255, 0.08);
+            background-color: #FFFFFF;
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
         
         .service-icon {
@@ -381,7 +381,7 @@
         .process-icon {
             width: 80px;
             height: 80px;
-            background-color: rgba(255, 255, 255, 0.05);
+            background-color: rgba(0, 0, 0, 0.05);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -408,14 +408,14 @@
             min-width: 300px;
             max-width: 350px;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             position: relative;
             transform-style: preserve-3d;
         }
         
         .pricing-card:hover {
             transform: translateY(-10px) rotateY(2deg);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
         
         .pricing-card.recommended {
@@ -499,10 +499,10 @@
         .contact-form {
             max-width: 600px;
             margin: 50px auto 0;
-            background-color: rgba(255, 255, 255, 0.05);
+            background-color: #FFFFFF;
             padding: 40px;
             border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
         }
         
         .form-group {
@@ -520,8 +520,8 @@
             width: 100%;
             padding: 15px;
             border-radius: 5px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background-color: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
             color: var(--text-color);
             transition: all 0.3s ease;
         }
@@ -529,7 +529,7 @@
         .form-control:focus {
             outline: none;
             border-color: var(--primary-color);
-            background-color: rgba(0, 0, 0, 0.3);
+            background-color: #ffffff;
             box-shadow: 0 0 0 3px rgba(255, 159, 70, 0.25);
         }
         
@@ -546,7 +546,7 @@
         .contact-icon {
             width: 50px;
             height: 50px;
-            background-color: rgba(255, 255, 255, 0.05);
+            background-color: rgba(0, 0, 0, 0.05);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -558,7 +558,7 @@
         }
         
         footer {
-            background-color: rgba(0, 0, 0, 0.3);
+            background-color: #F0F0F0;
             text-align: center;
             padding: 50px 0 30px;
             margin-top: 80px;
@@ -589,7 +589,7 @@
             justify-content: center;
             width: 40px;
             height: 40px;
-            background-color: rgba(255, 255, 255, 0.05);
+            background-color: rgba(0, 0, 0, 0.05);
             border-radius: 50%;
             color: var(--text-color);
             margin: 0 10px;
@@ -600,6 +600,7 @@
         .social-link:hover {
             background-color: var(--primary-color);
             transform: translateY(-3px);
+            color: white;
         }
         
         /* Chat-style testimonials */
@@ -626,14 +627,16 @@
             font-weight: 700;
             margin-bottom: 10px;
             font-size: 1.1rem;
+            color: var(--text-color);
         }
         
         .chat-bubble {
-            background-color: rgba(255, 255, 255, 0.05);
+            background-color: #F0F0F0;
             border-radius: 20px;
             padding: 15px 20px;
             position: relative;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            color: var(--text-color);
         }
         
         .chat-testimonial.client .chat-bubble {
@@ -648,7 +651,7 @@
             left: 20px;
             border-width: 0 10px 10px 10px;
             border-style: solid;
-            border-color: rgba(255, 255, 255, 0.05) transparent;
+            border-color: #F0F0F0 transparent;
         }
         
         .chat-testimonial.client .chat-bubble::after {
@@ -658,6 +661,7 @@
         .benefits-section {
             padding: 80px 0;
             text-align: center;
+            background-color: #F0F0F0;
         }
         
         .benefits-subtitle {
@@ -670,6 +674,7 @@
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 50px;
+            color: var(--text-color);
         }
         
         .benefits-comparison {
@@ -685,15 +690,15 @@
             min-width: 300px;
             text-align: left;
             padding: 30px;
-            background-color: rgba(255, 255, 255, 0.05);
+            background-color: #FFFFFF;
             border-radius: 10px;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
         }
         
         .benefits-col:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
         
         .benefits-heading {
@@ -712,6 +717,7 @@
             display: flex;
             align-items: flex-start;
             margin-bottom: 15px;
+            color: var(--text-color);
         }
         
         .benefits-list i {
@@ -727,18 +733,19 @@
             justify-content: center;
             margin: 30px 0;
             padding: 15px 30px;
-            background-color: rgba(255, 255, 255, 0.05);
+            background-color: #FFFFFF;
             border-radius: 50px;
             width: fit-content;
             margin-left: auto;
             margin-right: auto;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
             transition: all 0.3s ease;
+            color: var(--text-color);
         }
         
         .benefits-arrow:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
         
         .benefits-arrow i {
@@ -888,7 +895,7 @@
         .social-proof-ticker {
             overflow: hidden;
             padding: 20px 0;
-            background-color: rgba(255, 255, 255, 0.03);
+            background-color: #F0F0F0;
             margin: 30px 0;
         }
         
@@ -903,9 +910,11 @@
             align-items: center;
             margin: 0 20px;
             padding: 10px 20px;
-            background-color: rgba(255, 255, 255, 0.05);
+            background-color: #FFFFFF;
             border-radius: 50px;
             white-space: nowrap;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            color: var(--text-color);
         }
         
         .ticker-item i {
@@ -984,7 +993,7 @@
             gap: 0;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
             margin: 40px auto;
             max-width: 1000px;
         }
@@ -999,13 +1008,13 @@
         }
         
         .comparison-side.negative {
-            background-color: rgba(50, 50, 50, 0.9);
-            color: #ccc;
+            background-color: #f5f5f5;
+            color: #333;
         }
         
         .comparison-side.positive {
-            background-color: rgba(255, 159, 70, 0.15);
-            color: white;
+            background-color: rgba(255, 159, 70, 0.1);
+            color: #333;
         }
         
         .comparison-title {
@@ -1016,7 +1025,7 @@
         }
         
         .comparison-side.negative .comparison-title {
-            color: #999;
+            color: #555;
         }
         
         .comparison-side.positive .comparison-title {
@@ -1029,7 +1038,7 @@
             object-fit: cover;
             border-radius: 8px;
             margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
         .comparison-list {
@@ -1043,6 +1052,7 @@
             margin-bottom: 12px;
             padding-left: 30px;
             position: relative;
+            color: var(--text-color);
         }
         
         .comparison-list li::before {
@@ -1214,7 +1224,7 @@
         <div class="container">
             <div class="text-center">
                 <h1 class="text-5xl font-bold mb-4">압도적인 비주얼 퀄리티는<br>매출 상승의 지름길입니다</h1>
-                <p class="text-xl mb-6 text-gray-300">AI 디지털 휴먼으로 브랜드 가치를 높이세요</p>
+                <p class="text-xl mb-6 text-gray-600">AI 디지털 휴먼으로 브랜드 가치를 높이세요</p>
                 <a href="#contact" class="btn-primary">지금 상담하기</a>
             </div>
             
@@ -1286,7 +1296,7 @@
         <div class="container">
             <div class="text-center">
                 <h2 class="text-3xl font-bold mb-2">고객 후기</h2>
-                <p class="text-gray-400 mb-4">실제 고객들의 생생한 피드백을 확인하세요</p>
+                <p class="text-gray-600 mb-4">실제 고객들의 생생한 피드백을 확인하세요</p>
             </div>
             
             <div class="reviews-grid">
@@ -1515,7 +1525,7 @@
         <div class="container">
             <div class="text-center">
                 <h2 class="text-3xl font-bold mb-2">포트폴리오</h2>
-                <p class="text-gray-400 mb-4">실제 제작한 AI 디지털 휴먼 프로젝트</p>
+                <p class="text-gray-600 mb-4">실제 제작한 AI 디지털 휴먼 프로젝트</p>
             </div>
             
             <div class="portfolio-tabs">
@@ -1532,7 +1542,7 @@
                         <img src="https://cdn.jsdelivr.net/gh/davidnetizen/hosting@master/ai-model-1.jpg" alt="비즈니스 여성 모델" class="portfolio-image">
                         <div class="portfolio-caption">
                             <p>비즈니스 여성 모델</p>
-                            <p class="text-sm text-gray-400">"자연스러움이 돋보이는 결과물입니다"</p>
+                            <p class="text-sm text-gray-600">"자연스러움이 돋보이는 결과물입니다"</p>
                         </div>
                     </div>
                     
@@ -1540,7 +1550,7 @@
                         <img src="https://cdn.jsdelivr.net/gh/davidnetizen/hosting@master/ai-model-2.jpg" alt="패션 브랜드 모델" class="portfolio-image">
                         <div class="portfolio-caption">
                             <p>패션 브랜드 모델</p>
-                            <p class="text-sm text-gray-400">"디테일이 살아있는 표현력"</p>
+                            <p class="text-sm text-gray-600">"디테일이 살아있는 표현력"</p>
                         </div>
                     </div>
                     
@@ -1548,7 +1558,7 @@
                         <img src="https://cdn.jsdelivr.net/gh/davidnetizen/hosting@master/ai-model-3.jpg" alt="화장품 광고 모델" class="portfolio-image">
                         <div class="portfolio-caption">
                             <p>화장품 광고 모델</p>
-                            <p class="text-sm text-gray-400">"피부 톤과 질감 표현이 뛰어납니다"</p>
+                            <p class="text-sm text-gray-600">"피부 톤과 질감 표현이 뛰어납니다"</p>
                         </div>
                     </div>
                     
@@ -1556,7 +1566,7 @@
                         <img src="https://cdn.jsdelivr.net/gh/davidnetizen/hosting@master/ai-model-4.jpg" alt="스포츠 브랜드 모델" class="portfolio-image">
                         <div class="portfolio-caption">
                             <p>스포츠 브랜드 모델</p>
-                            <p class="text-sm text-gray-400">"역동적인 포즈와 표정이 돋보입니다"</p>
+                            <p class="text-sm text-gray-600">"역동적인 포즈와 표정이 돋보입니다"</p>
                         </div>
                     </div>
                     
@@ -1564,7 +1574,7 @@
                         <img src="https://cdn.jsdelivr.net/gh/davidnetizen/hosting@master/ai-model-5.jpg" alt="라이프스타일 모델" class="portfolio-image">
                         <div class="portfolio-caption">
                             <p>라이프스타일 모델</p>
-                            <p class="text-sm text-gray-400">"일상 속 자연스러운 모습을 표현"</p>
+                            <p class="text-sm text-gray-600">"일상 속 자연스러운 모습을 표현"</p>
                         </div>
                     </div>
                     
@@ -1572,7 +1582,7 @@
                         <img src="https://cdn.jsdelivr.net/gh/davidnetizen/hosting@master/ai-model-6.jpg" alt="뷰티 브랜드 모델" class="portfolio-image">
                         <div class="portfolio-caption">
                             <p>뷰티 브랜드 모델</p>
-                            <p class="text-sm text-gray-400">"클린 뷰티 콘셉트에 맞는 이미지"</p>
+                            <p class="text-sm text-gray-600">"클린 뷰티 콘셉트에 맞는 이미지"</p>
                         </div>
                     </div>
                 </div>
@@ -1584,7 +1594,7 @@
                         <img src="https://cdn.jsdelivr.net/gh/davidnetizen/hosting@master/ai-model-2.jpg" alt="패션 브랜드 모델" class="portfolio-image">
                         <div class="portfolio-caption">
                             <p>패션 브랜드 모델</p>
-                            <p class="text-sm text-gray-400">"디테일이 살아있는 표현력"</p>
+                            <p class="text-sm text-gray-600">"디테일이 살아있는 표현력"</p>
                         </div>
                     </div>
                     
@@ -1592,7 +1602,7 @@
                         <img src="https://cdn.jsdelivr.net/gh/davidnetizen/hosting@master/ai-model-7.jpg" alt="캐주얼 의류 모델" class="portfolio-image">
                         <div class="portfolio-caption">
                             <p>캐주얼 의류 모델</p>
-                            <p class="text-sm text-gray-400">"자연스러운 포즈와 실루엣"</p>
+                            <p class="text-sm text-gray-600">"자연스러운 포즈와 실루엣"</p>
                         </div>
                     </div>
                 </div>
@@ -1604,7 +1614,7 @@
                         <img src="https://cdn.jsdelivr.net/gh/davidnetizen/hosting@master/ai-model-1.jpg" alt="비즈니스 여성 모델" class="portfolio-image">
                         <div class="portfolio-caption">
                             <p>비즈니스 여성 모델</p>
-                            <p class="text-sm text-gray-400">"자연스러움이 돋보이는 결과물입니다"</p>
+                            <p class="text-sm text-gray-600">"자연스러움이 돋보이는 결과물입니다"</p>
                         </div>
                     </div>
                     
@@ -1612,7 +1622,7 @@
                         <img src="https://cdn.jsdelivr.net/gh/davidnetizen/hosting@master/ai-model-8.jpg" alt="기업 홍보 모델" class="portfolio-image">
                         <div class="portfolio-caption">
                             <p>기업 홍보 모델</p>
-                            <p class="text-sm text-gray-400">"신뢰감을 주는 프로페셔널한 이미지"</p>
+                            <p class="text-sm text-gray-600">"신뢰감을 주는 프로페셔널한 이미지"</p>
                         </div>
                     </div>
                 </div>
@@ -1624,15 +1634,15 @@
                         <img src="https://cdn.jsdelivr.net/gh/davidnetizen/hosting@master/ai-model-3.jpg" alt="화장품 광고 모델" class="portfolio-image">
                         <div class="portfolio-caption">
                             <p>화장품 광고 모델</p>
-                            <p class="text-sm text-gray-400">"피부 톤과 질감 표현이 뛰어납니다"</p>
+                            <p class="text-sm text-gray-600">"피부 톤과 질감 표현이 뛰어납니다"</p>
                         </div>
                     </div>
                     
                     <div class="portfolio-item" data-gallery="beauty" data-id="2">
-                        <img src="https://cdn.imweb.me/upload/S202405220c1dfad7409f4/7dbccbb2ee98e.png" alt="뷰티 브랜드 모델" class="portfolio-image">
+                        <img src="https://cdn.jsdelivr.net/gh/davidnetizen/hosting@master/ai-model-6.jpg" alt="뷰티 브랜드 모델" class="portfolio-image">
                         <div class="portfolio-caption">
                             <p>뷰티 브랜드 모델</p>
-                            <p class="text-sm text-gray-400">"클린 뷰티 콘셉트에 맞는 이미지"</p>
+                            <p class="text-sm text-gray-600">"클린 뷰티 콘셉트에 맞는 이미지"</p>
                         </div>
                     </div>
                 </div>
@@ -1644,7 +1654,7 @@
                         <img src="https://cdn.jsdelivr.net/gh/davidnetizen/hosting@master/ai-model-5.jpg" alt="라이프스타일 모델" class="portfolio-image">
                         <div class="portfolio-caption">
                             <p>라이프스타일 모델</p>
-                            <p class="text-sm text-gray-400">"일상 속 자연스러운 모습을 표현"</p>
+                            <p class="text-sm text-gray-600">"일상 속 자연스러운 모습을 표현"</p>
                         </div>
                     </div>
                     
@@ -1652,7 +1662,7 @@
                         <img src="https://cdn.jsdelivr.net/gh/davidnetizen/hosting@master/ai-model-4.jpg" alt="스포츠 브랜드 모델" class="portfolio-image">
                         <div class="portfolio-caption">
                             <p>스포츠 브랜드 모델</p>
-                            <p class="text-sm text-gray-400">"역동적인 포즈와 표정이 돋보입니다"</p>
+                            <p class="text-sm text-gray-600">"역동적인 포즈와 표정이 돋보입니다"</p>
                         </div>
                     </div>
                 </div>
@@ -1683,8 +1693,8 @@
             <h2 class="text-3xl font-bold mb-10">크몽 품질 보장 상위 1.1 %</h2>
             <p class="mb-10">수많은 거래건수와 후기로 이미 증명된 퀄리티</p>
             
-            <div class="bg-gray-800 p-6 rounded-lg mb-10 overflow-hidden">
-                <img src="https://cdn.imweb.me/upload/S202405220c1dfad7409f4/d4462ea036bcc.png" alt="크몽 품질 랭킹" class="w-full" class="max-w-full h-auto mx-auto" style="max-height: 400px; object-fit: contain;">
+            <div class="bg-gray-100 p-6 rounded-lg mb-10 overflow-hidden">
+                <img src="https://cdn.jsdelivr.net/gh/davidnetizen/hosting@master/ai-ranking-graph.jpg" alt="크몽 품질 랭킹" class="w-full">
             </div>
             
             <p class="mb-5">SNS에서도 ai 모델 퀄리티로</p>
@@ -1738,7 +1748,7 @@
             
             <p class="mt-10 mb-5">유튜브 무료 강의로도 호평일색입니다.</p>
             
-            <div class="bg-gray-800 p-6 rounded-lg mb-10 overflow-hidden">
+            <div class="bg-gray-100 p-6 rounded-lg mb-10 overflow-hidden">
                 <img src="https://cdn.jsdelivr.net/gh/davidnetizen/hosting@master/ai-youtube-stats.jpg" alt="유튜브 통계" class="w-full">
             </div>
             
@@ -1778,7 +1788,7 @@
         <div class="container">
             <div class="text-center">
                 <h2 class="text-3xl font-bold mb-2">매출 상승을 위한 브랜드 AI 모델을 선물해드립니다</h2>
-                <p class="text-gray-400 mb-10">AI 모델, AI 이미지는 누가, 어떤 명령을 내리느냐에 따라 결과물이 천차만별입니다.<br>AI 티가 나는 이미지는 고객들에게 신뢰도를 잃기 마련입니다.</p>
+                <p class="text-gray-600 mb-10">AI 모델, AI 이미지는 누가, 어떤 명령을 내리느냐에 따라 결과물이 천차만별입니다.<br>AI 티가 나는 이미지는 고객들에게 신뢰도를 잃기 마련입니다.</p>
                 <p class="text-xl mb-10">에이네루는 제품 브랜드와 걸맞는 최적의 AI 모델을 디자인합니다.</p>
             </div>
             
@@ -1791,7 +1801,7 @@
                             <i class="fas fa-dollar-sign"></i>
                         </div>
                         <h4 class="text-xl font-bold mb-3">홍보할 제품은 있지만 광고 모델 촬영 비용이 부담되실때</h4>
-                        <p class="text-gray-400">(강력추천)</p>
+                        <p class="text-gray-600">(강력추천)</p>
                     </div>
                     
                     <div class="service-card">
@@ -1831,7 +1841,7 @@
                 </div>
             </div>
             
-            <div class="mb-10 p-8 bg-gray-800 rounded-lg">
+            <div class="mb-10 p-8 bg-gray-100 rounded-lg">
                 <p class="text-xl mb-5">제 리뷰를 보면 퀄리티와 속도 모두 우수하다는 평이 많습니다. 왜 그럴까요?<br>요구사항 별로 어떤 AI 엔진을(스테이블 디퓨전,미드저니 등) 어떻게 사용할지 제대로 이해하고 있기 때문이죠.</p>
                 <p class="text-lg mb-10">AI 모델 제작시 레퍼런스 이미지, 키워드가 있다면 작업속도가 훨씬 빨라집니다</p>
             </div>
@@ -1843,7 +1853,7 @@
         <div class="container">
             <div class="text-center">
                 <h2 class="text-3xl font-bold mb-2">작업 프로세스</h2>
-                <p class="text-gray-400 mb-4">전문적인 AI 디지털 휴먼 제작 과정</p>
+                <p class="text-gray-600 mb-4">전문적인 AI 디지털 휴먼 제작 과정</p>
             </div>
             
             <div class="process-steps">
@@ -1852,7 +1862,7 @@
                         <i class="fas fa-comments"></i>
                     </div>
                     <h4 class="text-lg font-bold mb-2">문의</h4>
-                    <p class="text-gray-400">프로젝트에 대한 초기 상담</p>
+                    <p class="text-gray-600">프로젝트에 대한 초기 상담</p>
                 </div>
                 
                 <div class="process-step">
@@ -1860,7 +1870,7 @@
                         <i class="fas fa-tasks"></i>
                     </div>
                     <h4 class="text-lg font-bold mb-2">레퍼런스 이미지, 키워드 전달</h4>
-                    <p class="text-gray-400">요구사항 협의 및 구체화</p>
+                    <p class="text-gray-600">요구사항 협의 및 구체화</p>
                 </div>
                 
                 <div class="process-step">
@@ -1868,7 +1878,7 @@
                         <i class="fas fa-credit-card"></i>
                     </div>
                     <h4 class="text-lg font-bold mb-2">결제</h4>
-                    <p class="text-gray-400">계약 체결 및 작업 시작</p>
+                    <p class="text-gray-600">계약 체결 및 작업 시작</p>
                 </div>
                 
                 <div class="process-step">
@@ -1876,7 +1886,7 @@
                         <i class="fas fa-drafting-compass"></i>
                     </div>
                     <h4 class="text-lg font-bold mb-2">시안제작</h4>
-                    <p class="text-gray-400">초기 콘셉트 이미지 제작</p>
+                    <p class="text-gray-600">초기 콘셉트 이미지 제작</p>
                 </div>
                 
                 <div class="process-step">
@@ -1884,7 +1894,7 @@
                         <i class="fas fa-comments"></i>
                     </div>
                     <h4 class="text-lg font-bold mb-2">시안공유 및<br>진행 협의</h4>
-                    <p class="text-gray-400">수정사항 반영</p>
+                    <p class="text-gray-600">수정사항 반영</p>
                 </div>
                 
                 <div class="process-step">
@@ -1892,7 +1902,7 @@
                         <i class="fas fa-edit"></i>
                     </div>
                     <h4 class="text-lg font-bold mb-2">포토샵 후보정</h4>
-                    <p class="text-gray-400">세부 디테일 완성</p>
+                    <p class="text-gray-600">세부 디테일 완성</p>
                 </div>
                 
                 <div class="process-step">
@@ -1900,7 +1910,7 @@
                         <i class="fas fa-check-circle"></i>
                     </div>
                     <h4 class="text-lg font-bold mb-2">작업물 전달 및<br>거래 완료</h4>
-                    <p class="text-gray-400">최종 파일 제공</p>
+                    <p class="text-gray-600">최종 파일 제공</p>
                 </div>
             </div>
         </div>
@@ -1911,7 +1921,7 @@
         <div class="container">
             <div class="text-center">
                 <h2 class="text-3xl font-bold mb-2">서비스 가격</h2>
-                <p class="text-gray-400 mb-4">목적에 맞는 최적의 패키지를 선택하세요</p>
+                <p class="text-gray-600 mb-4">목적에 맞는 최적의 패키지를 선택하세요</p>
             </div>
             
             <div class="pricing-container">
@@ -2051,7 +2061,7 @@
             <div class="mt-16 mb-10">
                 <h3 class="text-2xl font-bold mb-5">서비스 소개</h3>
                 
-                <div class="bg-gray-800 p-6 rounded-lg mb-6">
+                <div class="bg-gray-100 p-6 rounded-lg mb-6">
                     <p class="mb-3">- 제작된 AI 모델은 포트폴리오로 사용될 수 있습니다. 원치 않으실 경우 미리 말씀해 주세요.</p>
                     <p class="mb-3">- 실사체, 실존 인물, 공인을 대상을 한 딥페이크 AI모델 생성은 윤리 문제를 우려하여 작업이 거부될 수도 있습니다.</p>
                     <p class="mb-3">- 원하시는 모든 요구사항 최대한 들어드리려 노력하지만, 생성형 AI이미지 특성상 달라질 수 있다는 점 유의 바랍니다.</p>
@@ -2062,7 +2072,7 @@
             <div>
                 <h3 class="text-2xl font-bold mb-5">구매 시 유의사항</h3>
                 
-                <div class="bg-gray-800 p-6 rounded-lg mb-6">
+                <div class="bg-gray-100 p-6 rounded-lg mb-6">
                     <p class="font-bold mb-3">만족스러운 결과물을 위해, 아래 내용을 미리 준비해 주세요.</p>
                     <p class="mb-2">- 원하는 서비스(AI광고모델,모델 얼굴 변경 등 AI실사 관련 무엇이든 ok)</p>
                     <p class="mb-2">- 제품 목업 파일(광고모델 제작시)</p>
@@ -2085,7 +2095,7 @@
         <div class="container">
             <div class="text-center">
                 <h2 class="text-3xl font-bold mb-2">상담 문의</h2>
-                <p class="text-gray-400 mb-4">프로젝트에 대해 상담해 보세요</p>
+                <p class="text-gray-600 mb-4">프로젝트에 대해 상담해 보세요</p>
             </div>
             
             <form class="contact-form">
@@ -2130,7 +2140,7 @@
                     </div>
                     <div>
                         <h4 class="text-lg font-bold">이메일</h4>
-                        <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4e3e26212b2027367924200e29232f2722602d2123">[email&#160;protected]</a></p>
+                        <p>phoenix7jn@gmail.com</p>
                     </div>
                 </div>
                 
@@ -2182,7 +2192,7 @@
         </div>
     </footer>
     
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         // Header scroll effect
         window.addEventListener('scroll', function() {
             const header = document.querySelector('.header');
