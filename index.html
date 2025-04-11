@@ -844,7 +844,7 @@
         }
         
         .gallery-close {
-            position: fixed;
+            position: absolute;
             top: -40px;
             right: 0;
             background: none;
@@ -852,7 +852,7 @@
             color: white;
             font-size: 2rem;
             cursor: pointer;
-			z-index: 2001;
+			<!-- z-index: 2001; -->
         }
         
         .gallery-next, .gallery-prev {
@@ -1675,10 +1675,10 @@
     
     <!-- Gallery Modal -->
     <div class="gallery-modal">
-	<button class="gallery-close">
+        <div class="gallery-content">
+            <button class="gallery-close">
                 <i class="fas fa-times"></i>
             </button>
-        <div class="gallery-content">
             <img src="" alt="" class="gallery-image">
             <div class="gallery-caption"></div>
             <button class="gallery-prev">
