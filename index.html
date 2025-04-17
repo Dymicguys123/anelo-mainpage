@@ -1198,6 +1198,110 @@
             color: var(--primary-color);
             font-weight: 600;
         }
+		
+		        /* Form Success Message */
+        .form-success {
+            display: none;
+            background-color: #d1e7dd;
+            color: #0f5132;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .form-success.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .honeypot {
+            display: none !important;
+        }
+
+        /* Form notification popup styles */
+        .form-notification {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            z-index: 2500;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+        
+        .form-notification.show {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        
+        .notification-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .notification-icon.success {
+            color: #28a745;
+        }
+        
+        .notification-icon.error {
+            color: #dc3545;
+        }
+        
+        .notification-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+        
+        .notification-message {
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+        }
+        
+        .notification-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .notification-btn:hover {
+            background-color: #e88b33;
+            transform: translateY(-2px);
+        }
+        
+        .notification-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2400;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+        
+        .notification-backdrop.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
         
         /* Responsive adjustments */
         @media (max-width: 768px) {
@@ -2372,7 +2476,7 @@
     <!-- </section> -->
 	
 	    
-     <!-- Contact Section -->
+    <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
             <div class="text-center">
@@ -2380,12 +2484,10 @@
                 <p class="text-gray-600 mb-4">프로젝트에 대해 상담해 보세요</p>
             </div>
             
-            <form class="contact-form" action="https://formsubmit.co/phoenix7jn@gmail.com" method="POST">
+            <form id="contactForm" class="contact-form">
                 <!-- FormSubmit Configuration -->
                 <input type="hidden" name="_subject" value="Anelo AI 모델 상담 문의">
-                <input type="hidden" name="_template" value="table">
                 <input type="hidden" name="_captcha" value="true">
-                <input type="hidden" name="_next" value="https://formsubmit.co/thank-you/">
                 <!-- Honeypot anti-spam -->
                 <input type="text" name="_honey" class="honeypot">
                 
@@ -2430,7 +2532,7 @@
                     </div>
                     <div>
                         <h4 class="text-lg font-bold">이메일</h4>
-                        <p>phoenix7jn@gmail.com</p>
+                        <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ea9a82858f848392dd8084aa8d878b8386c4898587">[email&#160;protected]</a></p>
                     </div>
                 </div>
                 
@@ -2457,6 +2559,21 @@
         </div>
     </section>
     
+    <!-- Form notification popup -->
+    <div class="notification-backdrop" id="notificationBackdrop"></div>
+    <div class="form-notification" id="formNotification">
+        <div class="notification-icon success" id="successIcon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <div class="notification-icon error" id="errorIcon" style="display: none;">
+            <i class="fas fa-exclamation-circle"></i>
+        </div>
+        <h3 class="notification-title" id="notificationTitle">상담 신청 완료</h3>
+        <p class="notification-message" id="notificationMessage">상담 신청이 성공적으로 접수되었습니다. 빠른 시일 내에 연락드리겠습니다.</p>
+        <button class="notification-btn" id="notificationBtn">확인</button>
+    </div>
+    
+    
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -2482,7 +2599,9 @@
         </div>
     </footer>
     
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+	
+	<script>
         // Header scroll effect
         window.addEventListener('scroll', function() {
             const header = document.querySelector('.header');
@@ -2613,43 +2732,108 @@
             });
         });
         
-        <!-- // Form submission with Formspree -->
-        <!-- const contactForm = document.querySelector('.contact-form'); -->
-        <!-- const formSuccess = document.getElementById('formSuccess'); -->
+        // Contact form with FormSubmit (AJAX implementation)
+        const contactForm = document.getElementById('contactForm');
+        const formNotification = document.getElementById('formNotification');
+        const notificationBackdrop = document.getElementById('notificationBackdrop');
+        const notificationBtn = document.getElementById('notificationBtn');
+        const successIcon = document.getElementById('successIcon');
+        const errorIcon = document.getElementById('errorIcon');
+        const notificationTitle = document.getElementById('notificationTitle');
+        const notificationMessage = document.getElementById('notificationMessage');
         
-        <!-- contactForm.addEventListener('submit', function(e) { -->
-            <!-- e.preventDefault(); -->
+        // Close notification
+        function closeNotification() {
+            formNotification.classList.remove('show');
+            notificationBackdrop.classList.remove('show');
+        }
+        
+        // Show notification
+        function showNotification(success, title, message) {
+            if (success) {
+                successIcon.style.display = 'block';
+                errorIcon.style.display = 'none';
+            } else {
+                successIcon.style.display = 'none';
+                errorIcon.style.display = 'block';
+            }
             
-            <!-- const formData = new FormData(this); -->
+            notificationTitle.textContent = title;
+            notificationMessage.textContent = message;
             
-            <!-- fetch("https://formspree.io/f/xeoawpjp", { -->
-                <!-- method: "POST", -->
-                <!-- body: formData, -->
-                <!-- headers: { -->
-                    <!-- 'Accept': 'application/json' -->
-                <!-- } -->
-            <!-- }) -->
-            <!-- .then(response => { -->
-                <!-- if (response.ok) { -->
-                    <!-- return response.json(); -->
-                <!-- } -->
-                <!-- throw new Error('네트워크 응답이 정상이 아닙니다.'); -->
-            <!-- }) -->
-            <!-- .then(data => { -->
-                <!-- // Show success message -->
-                <!-- formSuccess.classList.add('show'); -->
-                <!-- // Reset the form -->
-                <!-- contactForm.reset(); -->
-                <!-- // Hide success message after 5 seconds -->
-                <!-- setTimeout(() => { -->
-                    <!-- formSuccess.classList.remove('show'); -->
-                <!-- }, 5000); -->
-            <!-- }) -->
-            <!-- .catch(error => { -->
-                <!-- console.error('Error:', error); -->
-                <!-- alert('제출 중 오류가 발생했습니다. 다시 시도해주세요.'); -->
-            <!-- }); -->
-        <!-- }); -->
+            formNotification.classList.add('show');
+            notificationBackdrop.classList.add('show');
+        }
+        
+        // Close notification when clicking the button or backdrop
+        notificationBtn.addEventListener('click', closeNotification);
+        notificationBackdrop.addEventListener('click', closeNotification);
+        
+        // Form submission with AJAX
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(contactForm);
+                const name = formData.get('name');
+                const email = formData.get('email');
+                const message = formData.get('message');
+                
+                // Basic validation
+                if (!name || !email || !message) {
+                    showNotification(false, '입력 오류', '필수 항목을 모두 입력해주세요.');
+                    return;
+                }
+                
+                // Show loading state
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                const originalBtnText = submitBtn.textContent;
+                submitBtn.textContent = '전송 중...';
+                submitBtn.disabled = true;
+                
+                // Prepare the data for FormSubmit
+                fetch('https://formsubmit.co/ajax/phoenix7jn@gmail.com', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(Object.fromEntries(formData))
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Reset form
+                    contactForm.reset();
+                    
+                    // Show success notification
+                    showNotification(true, '상담 신청 완료', '상담 신청이 성공적으로 접수되었습니다. 빠른 시일 내에 연락드리겠습니다.');
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    
+                    // Show error notification
+                    showNotification(false, '전송 오류', '상담 신청 중 오류가 발생했습니다. 다시 시도하거나 직접 연락해 주세요.');
+                })
+                .finally(() => {
+                    // Reset button state
+                    submitBtn.textContent = originalBtnText;
+                    submitBtn.disabled = false;
+                });
+            });
+        }
+        
+        // Close notification with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && formNotification.classList.contains('show')) {
+                closeNotification();
+            }
+        });
     </script>
 </body>
 </html>
