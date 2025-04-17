@@ -671,7 +671,7 @@
         }
         
         .benefits-title {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             font-weight: 700;
             margin-bottom: 50px;
             color: var(--text-color);
@@ -1037,7 +1037,7 @@
         
         .comparison-image {
             width: 100%;
-            height: 200px;
+            height: 500px;
             object-fit: cover;
             border-radius: 8px;
             margin-bottom: 20px;
@@ -1086,6 +1086,115 @@
         }
         
         .comparison-highlight {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+		
+		        /* Pain Points Section Styles */
+        .pain-points-section {
+            background-color: #f9f9f9;
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .pain-points-container {
+            display: flex;
+            flex-direction: column;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .pain-points-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 40px;
+        }
+        
+        .pain-point-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .pain-point-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .pain-point-icon {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .pain-point-text {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            line-height: 1.5;
+        }
+        
+        .anelo-solution {
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            border-left: 5px solid var(--primary-color);
+        }
+        
+        .solution-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .solution-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-right: 10px;
+        }
+        
+        .solution-logo span {
+            color: var(--primary-color);
+        }
+        
+        .solution-title {
+            font-size: 1.3rem;
+            color: var(--text-color);
+            margin: 0;
+        }
+        
+        .solution-features {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 0;
+        }
+        
+        .solution-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .solution-feature::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        .feature-highlight {
             color: var(--primary-color);
             font-weight: 600;
         }
@@ -1178,6 +1287,16 @@
                 height: 3px;
                 width: 100%;
             }
+			
+			
+			.pain-point-item {
+                flex-direction: column;
+            }
+            
+            .pain-point-icon {
+                margin-bottom: 10px;
+            }
+        }
         }
     </style>
 </head>
@@ -1216,18 +1335,18 @@
         <a href="#contact" class="mobile-menu-link">상담</a>
     </div>
     
-    <!-- Floating Action Button -->
-    <a href="#contact" class="float-action-btn">
-        <i class="fas fa-headset"></i>
-        <span class="float-action-tooltip">상담 문의하기</span>
-    </a>
+    <!-- <!-- Floating Action Button --> -->
+    <!-- <a href="#contact" class="float-action-btn"> -->
+        <!-- <i class="fas fa-headset"></i> -->
+        <!-- <span class="float-action-tooltip">상담 문의하기</span> -->
+    <!-- </a> -->
     
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
             <div class="text-center">
-                <h1 class="text-5xl font-bold mb-4">압도적인 비주얼 퀄리티는<br>매출 상승의 지름길입니다</h1>
-                <p class="text-xl mb-6 text-gray-600">AI 디지털 휴먼으로 브랜드 가치를 높이세요</p>
+                <h1 class="text-4xl font-bold mb-4">촬영 없는 디지털 휴먼?<br>저렴하면서 퀄리티 있게!</h1>
+                <p class="text-xl mb-6 text-gray-600">AI 디지털 휴먼으로 경쟁력을 높이세요</p>
                 <a href="#contact" class="btn-primary">지금 상담하기</a>
             </div>
             
@@ -1257,7 +1376,7 @@
             </div>
             <div class="ticker-item">
                 <i class="fas fa-check-circle"></i>
-                <span>크몽 품질 보장 상위 1.1%</span>
+                <span>크몽 품질 보장 상위 2%</span>
             </div>
             <div class="ticker-item">
                 <i class="fas fa-bolt"></i>
@@ -1281,7 +1400,7 @@
             </div>
             <div class="ticker-item">
                 <i class="fas fa-check-circle"></i>
-                <span>크몽 품질 보장 상위 1.1%</span>
+                <span>크몽 품질 보장 상위 2%</span>
             </div>
             <div class="ticker-item">
                 <i class="fas fa-bolt"></i>
@@ -1293,6 +1412,53 @@
             </div>
         </div>
     </div>
+	
+	<!-- Pain Points Section (NEW) -->
+    <section class="pain-points-section">
+        <div class="pain-points-container">
+            <div class="pain-points-list">
+                <div class="pain-point-item">
+                    <div class="pain-point-icon">✔️</div>
+                    <div class="pain-point-text">모델비, 촬영비, 인건비까지 <strong>부담스럽고</strong></div>
+                </div>
+                <div class="pain-point-item">
+                    <div class="pain-point-icon">✔️</div>
+                    <div class="pain-point-text">이미지야 계속 필요한게 <strong>현실이고</strong></div>
+                </div>
+                <div class="pain-point-item">
+                    <div class="pain-point-icon">✔️</div>
+                    <div class="pain-point-text">매번 촬영하자니 <strong>시간도 없고</strong></div>
+                </div>
+                <div class="pain-point-item">
+                    <div class="pain-point-icon">✔️</div>
+                    <div class="pain-point-text">기획과 연출도 매번 <strong>새로 고민해야 하고</strong></div>
+                </div>
+            </div>
+            
+            <div class="anelo-solution">
+                <div class="solution-header">
+                    <div class="solution-logo">그래서 <span>ANELO</span>는</div>
+                </div>
+                <h3 class="solution-title">전용 AI 디지털 휴먼을 제공합니다.</h3>
+                
+                <ul class="solution-features">
+                    <li class="solution-feature">
+                        한 번 세팅된 모델로 <span class="feature-highlight">다양한 연출을 일관되게.</span>
+                    </li>
+                    <li class="solution-feature">
+                        비용은 실제 촬영 대비 <span class="feature-highlight">1/10</span>
+                    </li>
+                    <li class="solution-feature">
+                        <span class="feature-highlight">촬영 없이, 바로 제작</span> 가능합니다.
+                    </li>
+                </ul>
+                
+                <div class="text-center mt-8">
+                    <a href="#contact" class="btn-primary">AI 모델 상담받기</a>
+                </div>
+            </div>
+        </div>
+    </section>
     
     <!-- Reviews Section -->
     <section class="section">
@@ -1693,7 +1859,7 @@
     <!-- Social Proof Section -->
     <section class="section">
         <div class="container text-center">
-            <h2 class="text-3xl font-bold mb-10">크몽 품질 보장 상위 1.1 %</h2>
+            <h2 class="text-3xl font-bold mb-10">크몽 품질 보장 상위 2 %</h2>
             <p class="mb-10">수많은 거래건수와 후기로 이미 증명된 퀄리티</p>
             
             <div class="bg-gray-100 p-6 rounded-lg mb-10 overflow-hidden max-w-md mx-auto">
@@ -1703,8 +1869,15 @@
 				style="max-height: 400px; object-fit: contain;">
             </div>
             
-            <p class="mb-5">SNS에서도 ai 모델 퀄리티로</p>
-            <p class="mb-10">조회수 총합 52만(계속 상승중)</p>
+            <p class="mb-5">SNS에서도 ai 모델 퀄리티만으로</p>
+            <p class="text-2xl mb-8"><strong>조회수 총합 52만(계속 상승중)</strong></p>
+			
+			<div class="bg-gray-100 p-6 rounded-lg mb-10 overflow-hidden max-w-md mx-auto">
+                <img src="https://cdn.imweb.me/upload/S202405220c1dfad7409f4/99bfdcc34a9e7.png" 
+				alt="ai디지털 휴먼 반응도" 
+				class="max-w-full h-auto mx-auto" 
+				style="max-height: 400px; object-fit: contain;">
+            </div>
             
             <p class="text-2xl mb-8">사람들의 반응은 어땠을까요?</p>
             
@@ -1752,17 +1925,17 @@
                 </div>
             </div>
             
-            <p class="mt-10 mb-5">유튜브 무료 강의로도 호평일색입니다.</p>
+            <!-- <p class="mt-10 mb-5">유튜브 무료 강의로도 호평일색입니다.</p> -->
             
-            <div class="bg-gray-100 p-6 rounded-lg mb-10 overflow-hidden">
-                <img src="https://cdn.jsdelivr.net/gh/davidnetizen/hosting@master/ai-youtube-stats.jpg" alt="유튜브 통계" class="w-full">
-            </div>
+            <!-- <div class="bg-gray-100 p-6 rounded-lg mb-10 overflow-hidden"> -->
+                <!-- <img src="https://cdn.jsdelivr.net/gh/davidnetizen/hosting@master/ai-youtube-stats.jpg" alt="유튜브 통계" class="w-full"> -->
+            <!-- </div> -->
             
             <!-- 개선된 비교 섹션 -->
             <div class="comparison-container">
                 <div class="comparison-side negative">
-                    <h3 class="comparison-title">성의없는 AI로 외면받으실건가요?</h3>
-                    <img src="https://cdn.jsdelivr.net/gh/davidnetizen/hosting@master/low-quality-ai.jpg" alt="저품질 AI 이미지" class="comparison-image">
+                    <h3 class="comparison-title">성의없는 AI로 외면받으실건가요?<br>고객은 냉정합니다</h3>
+                    <img src="https://cdn.imweb.me/upload/S202405220c1dfad7409f4/2e93f64bd4e17.jpg" alt="저품질 AI 이미지" class="comparison-image" class="w-full h-85 object-cover">
                     <ul class="comparison-list">
                         <li>부자연스러운 표정과 디테일로 인한 신뢰도 하락</li>
                         <li>일관성 없는 이미지로 브랜드 가치 손상</li>
@@ -1773,7 +1946,7 @@
                 
                 <div class="comparison-side positive">
                     <h3 class="comparison-title">압도적인 비주얼과 퀄리티로<br>소비자의 시선을 사로잡으세요</h3>
-                    <img src="https://cdn.jsdelivr.net/gh/davidnetizen/hosting@master/high-quality-ai.jpg" alt="고품질 AI 이미지" class="comparison-image">
+                    <img src="https://cdn.imweb.me/upload/S202405220c1dfad7409f4/f8ef461a05aec.png" alt="고품질 AI 이미지" class="comparison-image" class="w-full h-85 object-cover">
                     <ul class="comparison-list">
                         <li>실제 모델과 구분할 수 없는 자연스러운 디테일</li>
                         <li>일관된 브랜드 이미지로 인지도 상승</li>
@@ -1847,11 +2020,36 @@
                 </div>
             </div>
             
-            <div class="mb-10 p-8 bg-gray-100 rounded-lg">
-                <p class="text-xl mb-5">제 리뷰를 보면 퀄리티와 속도 모두 우수하다는 평이 많습니다. 왜 그럴까요?<br>요구사항 별로 어떤 AI 엔진을(스테이블 디퓨전,미드저니 등) 어떻게 사용할지 제대로 이해하고 있기 때문이죠.</p>
-                <p class="text-lg mb-10">AI 모델 제작시 레퍼런스 이미지, 키워드가 있다면 작업속도가 훨씬 빨라집니다</p>
-            </div>
-        </div>
+            <!-- <div class="mb-10 p-8 bg-gray-100 rounded-lg"> -->
+                <!-- <p class="text-xl mb-5">제 리뷰를 보면 퀄리티와 속도 모두 우수하다는 평이 많습니다. 왜 그럴까요?<br>요구사항 별로 어떤 AI 엔진을(스테이블 디퓨전,미드저니 등) 어떻게 사용할지 제대로 이해하고 있기 때문이죠.</p> -->
+                <!-- <p class="text-lg mb-10">AI 모델 제작시 레퍼런스 이미지, 키워드가 있다면 작업속도가 훨씬 빨라집니다</p> -->
+            <!-- </div> -->
+			
+				<!-- <div class="mb-10 p-8 bg-gray-100 rounded-lg shadow-md"> -->
+				  <!-- <!-- 섹션 제목(필요에 따라 h2, h3 등으로 변경 가능) -->
+				  <!-- <h2 class="text-2xl font-semibold mb-4">퀄리티와 속도의 비결</h2> -->
+
+				  <!-- <!-- 본문 내용 -->
+				  <!-- <p class="text-xl leading-relaxed mb-5"> -->
+					<!-- 제 리뷰를 보면 -->
+					<!-- <span  -->
+					  <!-- class="text-white font-semibold px-1 py-1 rounded"  -->
+					  <!-- style="background-color: #f7aa4d;" {/* 인라인 스타일 추가 */} -->
+					<!-- > -->
+					<!-- 퀄리티와 속도 모두 우수 -->
+					<!-- </span> -->
+					<!-- 하다는 평이 많습니다. 왜 그럴까요?<br> -->
+					<!-- 요구사항 별로 어떤 AI 엔진을 (스테이블 디퓨전, 미드저니 등) 어떻게 사용할지 -->
+					<!-- 제대로 이해하고 있기 때문이죠. -->
+				  <!-- </p> -->
+
+				  <!-- <p class="text-lg leading-relaxed text-gray-700"> -->
+					<!-- AI 모델 제작 시 레퍼런스 이미지, 키워드가 있다면 -->
+					<!-- <span class="font-semibold text-gray-800">작업속도가 훨씬 빨라집니다</span>. -->
+				  <!-- </p> -->
+				<!-- </div> -->
+
+        <!-- </div> -->
     </section>
     
     <!-- Process Section -->
@@ -2097,6 +2295,84 @@
     </section>
     
     <!-- Contact Section -->
+    <!-- <section id="contact" class="section"> -->
+        <!-- <div class="container"> -->
+            <!-- <div class="text-center"> -->
+                <!-- <h2 class="text-3xl font-bold mb-2">상담 문의</h2> -->
+                <!-- <p class="text-gray-600 mb-4">프로젝트에 대해 상담해 보세요</p> -->
+            <!-- </div> -->
+            
+            <!-- <form class="contact-form"> -->
+                <!-- <div class="form-group"> -->
+                    <!-- <label class="form-label" for="name">이름</label> -->
+                    <!-- <input type="text" id="name" class="form-control" required> -->
+                <!-- </div> -->
+                
+                <!-- <div class="form-group"> -->
+                    <!-- <label class="form-label" for="email">이메일</label> -->
+                    <!-- <input type="email" id="email" class="form-control" required> -->
+                <!-- </div> -->
+                
+                <!-- <div class="form-group"> -->
+                    <!-- <label class="form-label" for="phone">연락처</label> -->
+                    <!-- <input type="tel" id="phone" class="form-control" placeholder="예: 010-1234-5678"> -->
+                <!-- </div> -->
+                
+                <!-- <div class="form-group"> -->
+                    <!-- <label class="form-label" for="service">관심 서비스</label> -->
+                    <!-- <select id="service" class="form-control"> -->
+                        <!-- <option value="">서비스 선택</option> -->
+                        <!-- <option value="standard">스탠다드 패키지</option> -->
+                        <!-- <option value="deluxe">디럭스 패키지</option> -->
+                        <!-- <option value="premium">프리미엄 패키지</option> -->
+                        <!-- <option value="custom">맞춤 서비스</option> -->
+                    <!-- </select> -->
+                <!-- </div> -->
+                
+                <!-- <div class="form-group"> -->
+                    <!-- <label class="form-label" for="message">문의 내용</label> -->
+                    <!-- <textarea id="message" class="form-control" rows="5" required placeholder="프로젝트에 대한 간략한 설명과 요구사항을 적어주세요."></textarea> -->
+                <!-- </div> -->
+                
+                <!-- <button type="submit" class="btn-primary w-full">상담 신청하기</button> -->
+            <!-- </form> -->
+            
+            <!-- <div class="contact-info"> -->
+                <!-- <div class="contact-item"> -->
+                    <!-- <div class="contact-icon"> -->
+                        <!-- <i class="fas fa-envelope"></i> -->
+                    <!-- </div> -->
+                    <!-- <div> -->
+                        <!-- <h4 class="text-lg font-bold">이메일</h4> -->
+                        <!-- <p>phoenix7jn@gmail.com</p> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+                
+                <!-- <div class="contact-item"> -->
+                    <!-- <div class="contact-icon"> -->
+                        <!-- <i class="fas fa-phone"></i> -->
+                    <!-- </div> -->
+                    <!-- <div> -->
+                        <!-- <h4 class="text-lg font-bold">전화</h4> -->
+                        <!-- <p>010-4903-3367</p> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+                
+                <!-- <div class="contact-item"> -->
+                    <!-- <div class="contact-icon"> -->
+                        <!-- <i class="fas fa-comment"></i> -->
+                    <!-- </div> -->
+                    <!-- <div> -->
+                        <!-- <h4 class="text-lg font-bold">카카오톡</h4> -->
+                        <!-- <p>@anelo</p> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+            <!-- </div> -->
+        <!-- </div> -->
+    <!-- </section> -->
+	
+	    
+    <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
             <div class="text-center">
@@ -2104,25 +2380,25 @@
                 <p class="text-gray-600 mb-4">프로젝트에 대해 상담해 보세요</p>
             </div>
             
-            <form class="contact-form">
+            <form class="contact-form" action="https://formspree.io/f/xeoawpjp" method="POST">
                 <div class="form-group">
                     <label class="form-label" for="name">이름</label>
-                    <input type="text" id="name" class="form-control" required>
+                    <input type="text" id="name" name="name" class="form-control" required>
                 </div>
                 
                 <div class="form-group">
                     <label class="form-label" for="email">이메일</label>
-                    <input type="email" id="email" class="form-control" required>
+                    <input type="email" id="email" name="email" class="form-control" required>
                 </div>
                 
                 <div class="form-group">
                     <label class="form-label" for="phone">연락처</label>
-                    <input type="tel" id="phone" class="form-control" placeholder="예: 010-1234-5678">
+                    <input type="tel" id="phone" name="phone" class="form-control" placeholder="예: 010-1234-5678">
                 </div>
                 
                 <div class="form-group">
                     <label class="form-label" for="service">관심 서비스</label>
-                    <select id="service" class="form-control">
+                    <select id="service" name="service" class="form-control">
                         <option value="">서비스 선택</option>
                         <option value="standard">스탠다드 패키지</option>
                         <option value="deluxe">디럭스 패키지</option>
@@ -2133,10 +2409,15 @@
                 
                 <div class="form-group">
                     <label class="form-label" for="message">문의 내용</label>
-                    <textarea id="message" class="form-control" rows="5" required placeholder="프로젝트에 대한 간략한 설명과 요구사항을 적어주세요."></textarea>
+                    <textarea id="message" name="message" class="form-control" rows="5" required placeholder="프로젝트에 대한 간략한 설명과 요구사항을 적어주세요."></textarea>
                 </div>
                 
                 <button type="submit" class="btn-primary w-full">상담 신청하기</button>
+                
+                <!-- <div class="form-success mt-4" id="formSuccess"> -->
+                    <!-- <h3 class="text-xl font-bold mb-2">문의가 성공적으로 접수되었습니다!</h3> -->
+                    <!-- <p>빠른 시일 내에 답변 드리겠습니다. 감사합니다.</p> -->
+                <!-- </div> -->
             </form>
             
             <div class="contact-info">
@@ -2329,17 +2610,44 @@
             });
         });
         
-        // Form submission (prevent page reload for demo)
+        // Form submission with Formspree
         const contactForm = document.querySelector('.contact-form');
+        const formSuccess = document.getElementById('formSuccess');
         
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Normally you would submit the form data to a server here
-            // For demo purposes, just show an alert
-            alert('감사합니다! 곧 연락드리겠습니다.');
-            this.reset();
+            const formData = new FormData(this);
+            
+            fetch("https://formspree.io/f/xeoawpjp", {
+                method: "POST",
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error('네트워크 응답이 정상이 아닙니다.');
+            })
+            .then(data => {
+                // Show success message
+                formSuccess.classList.add('show');
+                // Reset the form
+                contactForm.reset();
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    formSuccess.classList.remove('show');
+                }, 5000);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('제출 중 오류가 발생했습니다. 다시 시도해주세요.');
+            });
         });
+    </script>
     </script>
 </body>
 </html>
