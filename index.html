@@ -1633,32 +1633,38 @@
     
 
 	
-	 <!-- 히어로 섹션 v2 -->
-    <section class="relative h-[300px] h-screen flex items-center justify-center bg-gray-900 text-white mt-16">
-		  <picture>
-			<source media="(max-width: 768px)" srcset="https://cdn.imweb.me/upload/S202405220c1dfad7409f4/b188c4e33e845.png" />
-			<img 
-			  src="https://cdn.imweb.me/upload/S202405220c1dfad7409f4/367d93c11547c.png" 
-			  alt="AI 디지털 휴먼" 
-			  class="absolute inset-0 w-full h-full object:contain md:object-cover" 
-			/>
-		  </picture>
-		  <div class="absolute inset-0 bg-black opacity-60"></div>
-        </div>
-        
-        <div class="container mx-auto px-4 relative z-10 text-center">
-            <h1 class="text-xl md:text-6xl font-bold mb-6 leading-tight">
-                촬영 없이 만드는. <span class="relative inline-block">
-					<span class="bg-highlight px-1">고퀄리티 AI 광고모델</span>
-					</span>
-            </h1>
-            <h2 class="text-xl md:text-3xl mb-8 max-w-4xl mx-auto">
-                실제 모델 비용의 1/10로, 무제한 활용 가능한 전용 광고모델
-            </h2>
-        </div>
+	<!-- Hero Section v2 (mobile‑first 개선)  -->
+	<section class="relative flex items-center justify-center text-white mt-16
+					h-screen overflow-hidden bg-gray-900">
+
+	  <!-- 배경 이미지 -->
+	  <picture class="absolute inset-0 w-full h-full">
+		<source
+		  media="(max-width:768px)"
+		  srcset="https://cdn.imweb.me/upload/S202405220c1dfad7409f4/96ee02095fdab.jpg" />
+		<img
+		  src="https://cdn.imweb.me/upload/S202405220c1dfad7409f4/367d93c11547c.png"
+		  alt="AI 디지털 휴먼"
+		  class="w-full h-full object-cover" 
+		/>
+	  </picture>
+
+	  <!-- 어둡게 오버레이 -->
+	  <div class="absolute inset-0 bg-black opacity-60"></div>
+
+	  <!-- 카피 -->
+	  <div class="relative z-10 container mx-auto px-4 text-center">
+		<h1 class="text-xl md:text-6xl font-bold mb-6 leading-tight">
+		  촬영 없이 만드는,
+		  <span class="bg-highlight px-1">고퀄리티 AI 광고모델</span>
+		</h1>
+		<h2 class="text-xl md:text-3xl mb-8 max-w-4xl mx-auto">
+		  실제 모델 비용의 1/10로, 무제한 활용 가능한 전용 광고모델
+		</h2>
+	  </div>
+	</section>
 		
-		
-    </section>
+	
 	  <div class="container">
 	            <div class="stats-container">
                 <div class="stat-item">
