@@ -120,9 +120,9 @@
             cursor: pointer;
         }
 		
-	.bg-highlight {
-		background: linear-gradient(to top, #f7aa4d 40%, transparent 40%);
-	}
+		  .bg-highlight {
+			background: linear-gradient(to top, #f7aa4d 40%, transparent 40%);
+		  }
         
         .hero-section {
             padding: 180px 0 100px;
@@ -1635,13 +1635,15 @@
 	
 	 <!-- 히어로 섹션 v2 -->
     <section class="relative h-screen flex items-center justify-center bg-gray-900 text-white mt-16">
-        <div class="absolute inset-0 overflow-hidden">
-        <img
-		  src="https://cdn.imweb.me/upload/S202405220c1dfad7409f4/367d93c11547c.png"  
-		  alt="AI 디지털 휴먼"
-		  class="absolute inset-0 w-full h-full object-cover"
-		/>
-            <div class="absolute inset-0 bg-black opacity-60"></div>
+		  <picture>
+			<source media="(max-width: 768px)" srcset="https://cdn.imweb.me/upload/S202405220c1dfad7409f4/b188c4e33e845.png" />
+			<img 
+			  src="https://cdn.imweb.me/upload/S202405220c1dfad7409f4/367d93c11547c.png" 
+			  alt="AI 디지털 휴먼" 
+			  class="absolute inset-0 w-full h-full object-cover" 
+			/>
+		  </picture>
+		  <div class="absolute inset-0 bg-black opacity-60"></div>
         </div>
         
         <div class="container mx-auto px-4 relative z-10 text-center">
