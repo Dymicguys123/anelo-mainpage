@@ -326,70 +326,178 @@
             box-shadow: 0 5px 15px rgba(255, 159, 70, 0.3);
         }
         
-        .process-steps {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin-top: 80px;
-            counter-reset: step-counter;
-            position: relative;
-        }
-        
-        .process-steps::before {
-            content: "";
-            position: absolute;
-            top: 50px;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-color) 100%);
-            z-index: 0;
-        }
-        
-        .process-step {
-            flex: 1;
-            min-width: 200px;
-            margin: 15px;
-            text-align: center;
-            position: relative;
-            counter-increment: step-counter;
-            background-color: var(--dark-bg);
-            padding: 0 15px;
-            z-index: 1;
-        }
-        
-        .process-step::before {
-            content: counter(step-counter);
-            position: absolute;
-            top: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 50px;
-            background-color: var(--primary-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.5rem;
-            color: white;
-            box-shadow: 0 5px 15px rgba(255, 159, 70, 0.3);
-            z-index: 2;
-        }
-        
-        .process-icon {
-            width: 80px;
-            height: 80px;
-            background-color: rgba(0, 0, 0, 0.05);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 30px auto 20px;
-            color: var(--primary-color);
-            font-size: 2rem;
-        }
+
+		
+		/* 프로세스 및 모바일 최적화 */
+		.section-process {
+			padding: 3rem 1rem;
+			background: linear-gradient(135deg, #2c2c2c, #3a3a3a);
+			color: #ffffff;
+		}
+
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+
+		.process-header {
+			text-align: center;
+			margin-bottom: 3rem;
+		}
+
+		.process-header h2 {
+			font-size: 1.8rem;
+			font-weight: 700;
+			margin-bottom: 1rem;
+		}
+
+		.process-tagline {
+			font-size: 1.4rem;
+			font-weight: 500;
+			line-height: 1.5;
+		}
+
+		.highlight {
+			color: #f7aa4d;
+			font-weight: 700;
+		}
+
+		.process-grid {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+
+		.process-item {
+			display: flex;
+			background: rgba(255, 255, 255, 0.05);
+			border-radius: 12px;
+			padding: 1.5rem;
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.process-item:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+		}
+
+		.process-item::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 3px;
+			background: #f7aa4d;
+			transform: scaleX(0);
+			transform-origin: left;
+			transition: transform 0.3s ease;
+		}
+
+		.process-item:hover::after {
+			transform: scaleX(1);
+		}
+
+		.icon-container {
+			position: relative;
+			margin-right: 1.5rem;
+		}
+
+		.process-icon {
+			width: 60px;
+			height: 60px;
+			background: rgba(247, 170, 77, 0.2);
+			border-radius: 12px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 1.5rem;
+			color: #f7aa4d;
+		}
+
+		.process-number {
+			position: absolute;
+			top: -10px;
+			right: -10px;
+			background: #f7aa4d;
+			color: #222;
+			font-weight: 700;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 0.9rem;
+		}
+
+		.process-content {
+			flex: 1;
+		}
+
+		.process-content h3 {
+			font-size: 1.2rem;
+			font-weight: 600;
+			margin-bottom: 0.5rem;
+			color: #f7aa4d;
+		}
+
+		.process-content p {
+			font-size: 0.95rem;
+			color: rgba(255, 255, 255, 0.8);
+			line-height: 1.5;
+		}
+
+		/* 태블릿 이상 반응형 */
+		@media (min-width: 768px) {
+			.process-grid {
+				grid-template-columns: repeat(2, 1fr);
+			}
+			
+			.process-header h2 {
+				font-size: 2.2rem;
+			}
+			
+			.process-tagline {
+				font-size: 1.6rem;
+			}
+		}
+
+		/* 데스크탑 반응형 */
+		@media (min-width: 1024px) {
+			.process-grid {
+				grid-template-columns: repeat(3, 1fr);
+			}
+			
+			.section-process {
+				padding: 5rem 2rem;
+			}
+		}
+
+		/* 작은 모바일 화면 최적화 */
+		@media (max-width: 380px) {
+			.process-item {
+				padding: 1.2rem;
+			}
+			
+			.process-icon {
+				width: 50px;
+				height: 50px;
+				font-size: 1.2rem;
+			}
+			
+			.process-content h3 {
+				font-size: 1.1rem;
+			}
+			
+			.process-content p {
+				font-size: 0.85rem;
+			}
+		}
+		
+		/* 프로세스 및 모바일 최적화 끝 */
         
         .pricing-container {
             display: flex;
@@ -626,7 +734,7 @@
         .chat-name {
             font-weight: 700;
             margin-bottom: 10px;
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             color: var(--text-color);
         }
         
@@ -637,6 +745,7 @@
             position: relative;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             color: var(--text-color);
+			font-size: 1.2rem;
         }
         
         .chat-testimonial.client .chat-bubble {
@@ -1302,6 +1411,77 @@
             opacity: 1;
             pointer-events: auto;
         }
+		
+		       .anelo-primary {
+            color: #FF9D42;
+        }
+        
+        .anelo-bg-primary {
+            background-color: #FF9D42;
+        }
+        
+        .anelo-bg-light {
+            background-color: #FFF8F1;
+        }
+        
+        .anelo-border {
+            border-color: #FF9D42;
+        }
+        
+        .anelo-gradient {
+            background: linear-gradient(135deg, #FF9D42 0%, #FF7A42 100%);
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1;
+            color: #FF9D42;
+        }
+        
+        .card-shadow {
+            box-shadow: 0 10px 25px rgba(255, 157, 66, 0.1);
+        }
+        
+        .comparison-card {
+            transition: transform 0.3s ease;
+        }
+        
+        .comparison-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .pulse-animate {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .citation {
+            font-size: 0.7rem;
+            color: #999;
+            margin-top: 5px;
+        }
+        
+        .citation a {
+            color: #999;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .citation a:hover {
+            color: #FF9D42;
+        }
         
         /* Responsive adjustments */
         @media (max-width: 768px) {
@@ -1400,8 +1580,16 @@
             .pain-point-icon {
                 margin-bottom: 10px;
             }
+			
+			.accordion {
+            border-bottom: 1px solid #e2e8f0;
+						}
+			.accordion-header {
+            cursor: pointer;
+            padding: 1rem 0;
+			}
         }
-        }
+     }   
     </style>
 </head>
 <body>
@@ -1439,22 +1627,32 @@
         <a href="#contact" class="mobile-menu-link">상담</a>
     </div>
     
-    <!-- <!-- Floating Action Button --> -->
-    <!-- <a href="#contact" class="float-action-btn"> -->
-        <!-- <i class="fas fa-headset"></i> -->
-        <!-- <span class="float-action-tooltip">상담 문의하기</span> -->
-    <!-- </a> -->
-    
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="text-center">
-                <h1 class="text-4xl font-bold mb-4">촬영 없는 디지털 휴먼?<br>저렴하면서 퀄리티 있게!</h1>
-                <p class="text-xl mb-6 text-gray-600">AI 디지털 휴먼으로 경쟁력을 높이세요</p>
-                <a href="#contact" class="btn-primary">지금 상담하기</a>
-            </div>
-            
-            <div class="stats-container">
+
+	
+	 <!-- 히어로 섹션 v2 -->
+    <section class="relative h-screen flex items-center justify-center bg-gray-900 text-white mt-16">
+        <div class="absolute inset-0 overflow-hidden">
+        <img
+		  src="https://cdn.imweb.me/upload/S202405220c1dfad7409f4/367d93c11547c.png"  
+		  alt="AI 디지털 휴먼"
+		  class="absolute inset-0 w-full h-full object-cover"
+		/>
+            <div class="absolute inset-0 bg-black opacity-60"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <h1 class="text-xl md:text-6xl font-bold mb-6 leading-tight">
+                촬영 없이 만드는. 고퀄리티 AI 광고모델
+            </h1>
+            <h2 class="text-xl md:text-3xl mb-8 max-w-4xl mx-auto">
+                실제 모델 비용의 1/10로, 무제한 활용 가능한 전용 광고모델
+            </h2>
+        </div>
+		
+		
+    </section>
+	  <div class="container">
+	            <div class="stats-container">
                 <div class="stat-item">
                     <div class="stat-number">300회+</div>
                     <div class="stat-title">AI 모델 제작</div>
@@ -1468,8 +1666,8 @@
                     <div class="stat-title">실사 모델 제작</div>
                 </div>
             </div>
-        </div>
-    </section>
+		</div>
+        
     
     <!-- Social Proof Ticker -->
     <div class="social-proof-ticker">
@@ -1561,6 +1759,176 @@
                     <a href="#contact" class="btn-primary">AI 모델 상담받기</a>
                 </div>
             </div>
+        </div>
+    </section>
+	
+	 <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <!-- Section Title -->
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">알고 계셨나요?</h2>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto">수많은 기업들이 이미 AI 모델을 도입하여 경쟁우위를 확보하고 있습니다</p>
+            </div>
+            
+            <!-- AI Model Image Section -->
+            <div class="mb-12 overflow-hidden rounded-xl mx-auto max-w-4xl shadow-lg">
+                <div class="bg-gray-200 w-full relative" style="height: 800px;">
+                    
+					<img
+					  src="https://cdn.imweb.me/upload/S202405220c1dfad7409f4/2a17095bef80c.png"  
+					  alt="AI모델 타사 활용 사례"
+					  class="absolute inset-0 w-full h-full object-cover"
+					/>
+                    <div class="absolute inset-0 flex items-center justify-center text-xl text-gray-800">
+                        ANELO가 제작한 모델들입니다.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Key Stats Section -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 max-w-5xl mx-auto">
+                <!-- Eye-catching Stat 1 -->
+                <div class="bg-white rounded-xl p-8 card-shadow">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="mb-4 md:mb-0 md:mr-6">
+                            <div class="stat-number">91.7<span class="text-2xl">%</span></div>
+                            <p class="text-xl font-semibold mt-2">더 높은 주목도</p>
+                            <div class="citation">
+                                <a href="https://www.adwerx.com/blog/ad-science-ads-with-faces-eleven-times-more-likely-to-get-noticed" target="_blank">출처: Adwerx 연구, 2023</a>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <p>얼굴이 포함된 광고는 그렇지 않은 광고보다 <strong class="anelo-primary">압도적으로 높은 주목도</strong>를 기록했습니다. 인간의 뇌는 다른 시각적 자극보다 얼굴을 <strong>2배 이상 빠르게</strong> 인식합니다.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Eye-catching Stat 2 -->
+                <div class="bg-white rounded-xl p-8 card-shadow">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="mb-4 md:mb-0 md:mr-6">
+                            <div class="stat-number">48<span class="text-2xl">%</span></div>
+                            <p class="text-xl font-semibold mt-2">높은 클릭률</p>
+                            <div class="citation">
+                                <a href="https://www.superside.com/blog/faces-in-ads" target="_blank">출처: Superside 사례 연구, 2023</a>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <p>광고에 인물 얼굴과 내레이션을 추가했을 때 <strong class="anelo-primary">클릭률이 48% 증가</strong>하고 클릭당 비용(CPC)이 <strong>62% 감소</strong>했습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Real Model vs AI Model Comparison -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-center mb-8">실제 모델 촬영 vs AI 디지털 휴먼</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                    <!-- Real Model Column -->
+                    <div class="comparison-card bg-gray-100 rounded-xl p-6 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-gray-700 text-white px-4 py-1 rounded-bl-lg">기존 방식</div>
+                        <h4 class="text-xl font-bold mb-6 text-gray-700">실제 모델 촬영</h4>
+                        
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <span class="text-red-500 mr-2"><i class="fas fa-times-circle mt-1"></i></span>
+                                <span><strong>비용 부담:</strong> 촬영 1회당 100~200만원</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-500 mr-2"><i class="fas fa-times-circle mt-1"></i></span>
+                                <span><strong>시간 소요:</strong> 일정 조율 및 준비에 3~7일</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-500 mr-2"><i class="fas fa-times-circle mt-1"></i></span>
+                                <span><strong>제한된 결과물:</strong> 촬영당 5~10장의 이미지</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-500 mr-2"><i class="fas fa-times-circle mt-1"></i></span>
+                                <span><strong>일관성 부재:</strong> 모델 컨디션에 따라 결과 변동</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-500 mr-2"><i class="fas fa-times-circle mt-1"></i></span>
+                                <span><strong>추가 촬영 필요:</strong> 컨셉 변경 시 재촬영 필수</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="mt-6 pt-6 border-t border-gray-300">
+                            <p class="text-lg font-bold text-red-500">12개월 운영 시 예상 비용: 1,200만원+</p>
+                        </div>
+                    </div>
+                    
+                    <!-- AI Model Column -->
+                    <div class="comparison-card anelo-bg-light rounded-xl p-6 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 anelo-bg-primary text-white px-4 py-1 rounded-bl-lg">새로운 방식</div>
+                        <h4 class="text-xl font-bold mb-6 anelo-primary">AI 디지털 휴먼</h4>
+                        
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2"><i class="fas fa-check-circle mt-1"></i></span>
+                                <span><strong>비용 효율성:</strong> 초기 세팅만 10~20만원</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2"><i class="fas fa-check-circle mt-1"></i></span>
+                                <span><strong>빠른 제작:</strong> 최소 24시간 내 결과물 제공</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2"><i class="fas fa-check-circle mt-1"></i></span>
+                                <span><strong>무제한 활용:</strong> 필요한 만큼 이미지 생성 가능</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2"><i class="fas fa-check-circle mt-1"></i></span>
+                                <span><strong>완벽한 일관성:</strong> 항상 동일한 퀄리티 유지</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2"><i class="fas fa-check-circle mt-1"></i></span>
+                                <span><strong>유연한 변경:</strong> 텍스트 입력으로 즉시 컨셉 변경</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="mt-6 pt-6 border-t border-gray-300">
+                            <p class="text-lg font-bold text-green-600">12개월 운영 시 예상 비용: 10~20만원</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Conversion Impact -->
+            <div class="bg-white rounded-xl p-8 card-shadow max-w-3xl mx-auto mb-12">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="mb-6 md:mb-0 md:mr-8 text-center">
+                        <div class="stat-number">38<span class="text-2xl">%</span></div>
+                        <p class="text-xl font-semibold mt-2">높은 전환율</p>
+                        <div class="citation">
+                            <a href="https://www.growbo.com/images-for-highest-conversion-rate/" target="_blank">출처: ConversionXL 연구, 2023</a>
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-lg">인물 이미지가 포함된 웹사이트는 그렇지 않은 웹사이트보다 <strong class="anelo-primary">평균 38% 더 높은 전환율</strong>을 기록했습니다. 매력적인 모델은 시선을 사로잡고, <strong>광고 효과를 크게 향상</strong>시킵니다.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- <!-- FOMO Section -->
+            <!-- <div class="bg-gray-900 text-white rounded-xl p-8 max-w-4xl mx-auto mb-12"> -->
+                <!-- <h3 class="text-2xl font-bold mb-6">당신의 경쟁사는 이미 AI 모델을 활용하고 있습니다</h3> -->
+                <!-- <p class="text-lg mb-6">1/10의 비용으로 3배 이상의 광고 효과를 누리는 기업들이 늘고 있습니다. 실시간으로 변화하는 마케팅 환경에서 당신만 기존 방식을 고수하고 있나요?</p> -->
+                
+                <!-- <div class="flex justify-between items-center bg-gray-800 rounded-lg p-4"> -->
+                    <!-- <div> -->
+                        <!-- <p class="font-semibold">실제 모델 촬영 대비 비용 절감률</p> -->
+                        <!-- <p class="text-sm text-gray-400">12개월 기준</p> -->
+                    <!-- </div> -->
+                    <!-- <div class="text-3xl font-bold text-green-400">98.3%</div> -->
+                <!-- </div> -->
+            <!-- </div> -->
+            
+            <!-- <!-- CTA Button -->
+            <!-- <div class="text-center"> -->
+                <!-- <a href="#contact" class="inline-block anelo-gradient text-white text-lg font-bold px-10 py-4 rounded-full shadow-lg hover:shadow-xl transform transition duration-300 hover:-translate-y-1"> -->
+                    <!-- AI 모델 도입 상담하기 -->
+                <!-- </a> -->
+            <!-- </div> -->
         </div>
     </section>
     
@@ -1803,7 +2171,7 @@
             
             <div class="portfolio-tabs">
                 <div class="portfolio-tab active" data-tab="all">전체 보기</div>
-                <div class="portfolio-tab" data-tab="fashion">패션 모델</div>
+                <!-- <div class="portfolio-tab" data-tab="fashion">패션 모델</div> -->
                 <div class="portfolio-tab" data-tab="business">비즈니스</div>
                 <div class="portfolio-tab" data-tab="beauty">뷰티/화장품</div>
                 <div class="portfolio-tab" data-tab="lifestyle">라이프스타일</div>
@@ -1884,17 +2252,17 @@
             <div class="tab-content" id="tab-business">
                 <div class="portfolio-grid">
                     <div class="portfolio-item" data-gallery="business" data-id="1">
-                        <img src="https://cdn.jsdelivr.net/gh/davidnetizen/hosting@master/ai-model-1.jpg" alt="비즈니스 여성 모델" class="portfolio-image">
+                        <img src="https://cdn.imweb.me/upload/S202405220c1dfad7409f4/adc1c4e7ac66d.jpg" alt="비즈니스 모델" class="portfolio-image">
                         <div class="portfolio-caption">
-                            <p>비즈니스 여성 모델</p>
-                            <p class="text-sm text-gray-600">"자연스러움이 돋보이는 결과물입니다"</p>
+                            <p>비즈니스 연출 모델</p>
+                            <p class="text-sm text-gray-600">"AI로 연출된 대화씬입니다"</p>
                         </div>
                     </div>
                     
                     <div class="portfolio-item" data-gallery="business" data-id="2">
-                        <img src="https://cdn.jsdelivr.net/gh/davidnetizen/hosting@master/ai-model-8.jpg" alt="기업 홍보 모델" class="portfolio-image">
+                        <img src="https://cdn.imweb.me/upload/S202405220c1dfad7409f4/aee07919eab44.png" alt="중년 비즈니스 모델" class="portfolio-image">
                         <div class="portfolio-caption">
-                            <p>기업 홍보 모델</p>
+                            <p>중년 남성 프로필 모델</p>
                             <p class="text-sm text-gray-600">"신뢰감을 주는 프로페셔널한 이미지"</p>
                         </div>
                     </div>
@@ -1904,10 +2272,10 @@
             <div class="tab-content" id="tab-beauty">
                 <div class="portfolio-grid">
                     <div class="portfolio-item" data-gallery="beauty" data-id="1">
-                        <img src="https://cdn.jsdelivr.net/gh/davidnetizen/hosting@master/ai-model-3.jpg" alt="화장품 광고 모델" class="portfolio-image">
+                        <img src="https://cdn.imweb.me/upload/S202405220c1dfad7409f4/0db3d5545481b.png" alt="화장품 광고 모델" class="portfolio-image">
                         <div class="portfolio-caption">
-                            <p>화장품 광고 모델</p>
-                            <p class="text-sm text-gray-600">"피부 톤과 질감 표현이 뛰어납니다"</p>
+                            <p>스튜디오 뷰티모델</p>
+                            <p class="text-sm text-gray-600">"네추럴한 포즈 연출"</p>
                         </div>
                     </div>
                     
@@ -1918,24 +2286,39 @@
                             <p class="text-sm text-gray-600">"클린 뷰티 콘셉트에 맞는 이미지"</p>
                         </div>
                     </div>
+					
+					<div class="portfolio-item" data-gallery="beauty" data-id="3">
+                        <img src="https://cdn.imweb.me/upload/S202405220c1dfad7409f4/a1482929380ee.png" alt="뷰티 브랜드 모델" class="portfolio-image">
+                        <div class="portfolio-caption">
+                            <p>헤어케어 모델</p>
+                            <p class="text-sm text-gray-600">"헤어제품 모델 연출 컷"</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             
             <div class="tab-content" id="tab-lifestyle">
                 <div class="portfolio-grid">
                     <div class="portfolio-item" data-gallery="lifestyle" data-id="1">
-                        <img src="https://cdn.jsdelivr.net/gh/davidnetizen/hosting@master/ai-model-5.jpg" alt="라이프스타일 모델" class="portfolio-image">
+                        <img src="https://cdn.imweb.me/upload/S202405220c1dfad7409f4/685759de57d8b.png" alt="라이프스타일 모델" class="portfolio-image">
                         <div class="portfolio-caption">
-                            <p>라이프스타일 모델</p>
-                            <p class="text-sm text-gray-600">"일상 속 자연스러운 모습을 표현"</p>
+                            <p>남성 향수 모델</p>
+                            <p class="text-sm text-gray-600">"남성적인 향수 모델 연출"</p>
                         </div>
                     </div>
                     
                     <div class="portfolio-item" data-gallery="lifestyle" data-id="2">
-                        <img src="https://cdn.jsdelivr.net/gh/davidnetizen/hosting@master/ai-model-4.jpg" alt="스포츠 브랜드 모델" class="portfolio-image">
+                        <img src="https://cdn.imweb.me/upload/S202405220c1dfad7409f4/6686b89fada41.png" alt="스포츠 브랜드 모델" class="portfolio-image">
                         <div class="portfolio-caption">
-                            <p>스포츠 브랜드 모델</p>
-                            <p class="text-sm text-gray-600">"역동적인 포즈와 표정이 돋보입니다"</p>
+                            <p>스포츠 모델</p>
+                            <p class="text-sm text-gray-600">"훈훈하고 호감상인 외모 연출"</p>
+                        </div>
+                    </div>
+					<div class="portfolio-item" data-gallery="lifestyle" data-id="3">
+                        <img src="https://cdn.imweb.me/upload/S202405220c1dfad7409f4/1a6fbc588e05a.png" alt="가방 모델" class="portfolio-image">
+                        <div class="portfolio-caption">
+                            <p>가방 모델</p>
+                            <p class="text-sm text-gray-600">"라이프 스타일 가방 연출 모델"</p>
                         </div>
                     </div>
                 </div>
@@ -1963,18 +2346,18 @@
     <!-- Social Proof Section -->
     <section class="section">
         <div class="container text-center">
-            <h2 class="text-3xl font-bold mb-10">크몽 품질 보장 상위 2 %</h2>
-            <p class="mb-10">수많은 거래건수와 후기로 이미 증명된 퀄리티</p>
+            <!-- <h2 class="text-3xl font-bold mb-10">크몽 품질 보장 상위 2 %</h2> -->
+            <!-- <p class="mb-10">수많은 거래건수와 후기로 이미 증명된 퀄리티</p> -->
             
-            <div class="bg-gray-100 p-6 rounded-lg mb-10 overflow-hidden max-w-md mx-auto">
-                <img src="https://cdn.imweb.me/upload/S202405220c1dfad7409f4/d4462ea036bcc.png" 
-				alt="크몽 품질 랭킹" 
-				class="max-w-full h-auto mx-auto" 
-				style="max-height: 400px; object-fit: contain;">
-            </div>
+            <!-- <div class="bg-gray-100 p-6 rounded-lg mb-10 overflow-hidden max-w-md mx-auto"> -->
+                <!-- <img src="https://cdn.imweb.me/upload/S202405220c1dfad7409f4/d4462ea036bcc.png"  -->
+				<!-- alt="크몽 품질 랭킹"  -->
+				<!-- class="max-w-full h-auto mx-auto"  -->
+				<!-- style="max-height: 400px; object-fit: contain;"> -->
+            <!-- </div> -->
             
-            <p class="mb-5">SNS에서도 ai 모델 퀄리티만으로</p>
-            <p class="text-2xl mb-8"><strong>조회수 총합 52만(계속 상승중)</strong></p>
+            <p class="text-xl md:text-4xl mb-5">SNS에서 ai 모델 퀄리티만으로</p>
+            <p class="text-2xl md:text-5xl mb-8"><strong>조회수 총합 52만(계속 상승중)</strong></p>
 			
 			<div class="bg-gray-100 p-6 rounded-lg mb-10 overflow-hidden max-w-md mx-auto">
                 <img src="https://cdn.imweb.me/upload/S202405220c1dfad7409f4/99bfdcc34a9e7.png" 
@@ -1989,35 +2372,35 @@
                 <div class="chat-testimonial self-start">
                     <p class="chat-name">화장품 브랜드 마케팅 담당자</p>
                     <div class="chat-bubble">
-                        <p>실제 모델 섭외비가 예산을 초과해서 고민이었는데, AI 모델로 해결했어요. 품질도 좋고 피드백도 바로 반영해주셔서 좋았습니다.</p>
+                        <p>실제 모델 섭외비가 예산을 초과해서 고민이었는데, AI 모델로 해결했어요. <strong>품질도 좋고 피드백도 바로 반영</strong>해주셔서 좋았습니다.</p>
                     </div>
                 </div>
                 
                 <div class="chat-testimonial client self-end">
                     <p class="chat-name">패션 스타트업 대표</p>
                     <div class="chat-bubble">
-                        <p>여러 컨셉으로 시도해볼 수 있어서 좋았어요. 실제 촬영은 비용도 많이 들고 컨셉 변경이 어려웠는데 AI로 해결됐습니다.</p>
+                        <p>여러 컨셉으로 시도해볼 수 있어서 좋았어요. <strong>실제 촬영은 비용도 많이 들고</strong> 컨셉 변경이 어려웠는데 AI로 해결됐습니다.</p>
                     </div>
                 </div>
                 
                 <div class="chat-testimonial self-start">
                     <p class="chat-name">SNS 마케팅 전문가</p>
                     <div class="chat-bubble">
-                        <p>진짜 사람인줄 알았어요. 클라이언트도 매우 만족하셨고 추가 작업도 의뢰했습니다.</p>
+                        <p><strong>진짜 사람인줄 알았어요.</strong> 클라이언트도 매우 만족하셨고 추가 작업도 의뢰했습니다.</p>
                     </div>
                 </div>
                 
                 <div class="chat-testimonial client self-end">
                     <p class="chat-name">소셜미디어 댓글</p>
                     <div class="chat-bubble">
-                        <p>와.. 이제 모델도 AI가 대체하는건가요? 퀄리티가 정말 놀랍네요.</p>
+                        <p>와.. 이제 모델도 AI가 대체하는건가요? <strong>퀄리티가 정말 놀랍네요.</strong></p>
                     </div>
                 </div>
                 
                 <div class="chat-testimonial self-start">
                     <p class="chat-name">온라인 쇼핑몰 운영자</p>
                     <div class="chat-bubble">
-                        <p>이런 모델이면 무조건 눌러볼 것 같아요. CTR이 확실히 올랐습니다.</p>
+                        <p>이런 모델이면 무조건 눌러볼 것 같아요. <strong>CTR이 확실히 올랐습니다.</strong></p>
                     </div>
                 </div>
                 
@@ -2069,11 +2452,11 @@
     <!-- Service Intro Section -->
     <section id="services" class="section">
         <div class="container">
-            <div class="text-center">
-                <h2 class="text-3xl font-bold mb-2">매출 상승을 위한 브랜드 AI 모델을 선물해드립니다</h2>
-                <p class="text-gray-600 mb-10">AI 모델, AI 이미지는 누가, 어떤 명령을 내리느냐에 따라 결과물이 천차만별입니다.<br>AI 티가 나는 이미지는 고객들에게 신뢰도를 잃기 마련입니다.</p>
-                <p class="text-xl mb-10">에이네루는 제품 브랜드와 걸맞는 최적의 AI 모델을 디자인합니다.</p>
-            </div>
+            <!-- <div class="text-center"> -->
+                <!-- <h2 class="text-3xl font-bold mb-2">매출 상승을 위한 브랜드 AI 모델을 선물해드립니다</h2> -->
+                <!-- <p class="text-gray-600 mb-10">AI 모델, AI 이미지는 누가, 어떤 명령을 내리느냐에 따라 결과물이 천차만별입니다.<br>AI 티가 나는 이미지는 고객들에게 신뢰도를 잃기 마련입니다.</p> -->
+                <!-- <p class="text-xl mb-10">에이네루는 제품 브랜드와 걸맞는 최적의 AI 모델을 디자인합니다.</p> -->
+            <!-- </div> -->
             
             <div class="mb-10">
                 <h3 class="text-2xl font-bold mb-5">AI 모델 서비스는 이런분들께 추천드립니다.</h3>
@@ -2155,326 +2538,216 @@
 
         <!-- </div> -->
     </section>
-    
-    <!-- Process Section -->
-    <section id="process" class="section">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="text-3xl font-bold mb-2">작업 프로세스</h2>
-                <p class="text-gray-600 mb-4">전문적인 AI 디지털 휴먼 제작 과정</p>
-            </div>
-            
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="process-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h4 class="text-lg font-bold mb-2">문의</h4>
-                    <p class="text-gray-600">프로젝트에 대한 초기 상담</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="process-icon">
-                        <i class="fas fa-tasks"></i>
-                    </div>
-                    <h4 class="text-lg font-bold mb-2">레퍼런스 이미지, 키워드 전달</h4>
-                    <p class="text-gray-600">요구사항 협의 및 구체화</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="process-icon">
-                        <i class="fas fa-credit-card"></i>
-                    </div>
-                    <h4 class="text-lg font-bold mb-2">결제</h4>
-                    <p class="text-gray-600">계약 체결 및 작업 시작</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="process-icon">
-                        <i class="fas fa-drafting-compass"></i>
-                    </div>
-                    <h4 class="text-lg font-bold mb-2">시안제작</h4>
-                    <p class="text-gray-600">초기 콘셉트 이미지 제작</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="process-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h4 class="text-lg font-bold mb-2">시안공유 및<br>진행 협의</h4>
-                    <p class="text-gray-600">수정사항 반영</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="process-icon">
-                        <i class="fas fa-edit"></i>
-                    </div>
-                    <h4 class="text-lg font-bold mb-2">포토샵 후보정</h4>
-                    <p class="text-gray-600">세부 디테일 완성</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="process-icon">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <h4 class="text-lg font-bold mb-2">작업물 전달 및<br>거래 완료</h4>
-                    <p class="text-gray-600">최종 파일 제공</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Pricing Section -->
-    <section id="pricing" class="section">
-        <div class="container">
-            <div class="text-center">
+
+
+	<!-- Process Section (Improved Layout with Brand Color) -->
+	<section id="process" class="section-process">
+			<div class="container">
+				<div class="process-header">
+					<h2>AI 광고모델 제작 과정</h2>
+					<p class="process-tagline">키워드와 레퍼런스가 있다면 <span class="highlight">훨씬 수월합니다!</span></p>
+				</div>
+				
+				<div class="process-grid">
+					<div class="process-item">
+						<div class="icon-container">
+							<div class="process-icon">
+								<i class="fas fa-file-alt"></i>
+							</div>
+							<div class="process-number">01</div>
+						</div>
+						<div class="process-content">
+							<h3>요청 단계</h3>
+							<p>브랜드 정보와 희망하는 컨셉, 이미지 용도 등 기본 정보를 요청합니다.</p>
+						</div>
+					</div>
+					
+					<div class="process-item">
+						<div class="icon-container">
+							<div class="process-icon">
+								<i class="fas fa-comments"></i>
+							</div>
+							<div class="process-number">02</div>
+						</div>
+						<div class="process-content">
+							<h3>컨셉 조율</h3>
+							<p>AI 모델 시안 제작 및 컨셉, 분위기, 스타일 확정합니다.</p>
+						</div>
+					</div>
+					
+					<div class="process-item">
+						<div class="icon-container">
+							<div class="process-icon">
+								<i class="fas fa-handshake"></i>
+							</div>
+							<div class="process-number">03</div>
+						</div>
+						<div class="process-content">
+							<h3>컨셉 확정 및 결제</h3>
+							<p>용도,컨셉 확정 후 결제를 진행합니다.</p>
+						</div>
+					</div>
+					
+					<div class="process-item">
+						<div class="icon-container">
+							<div class="process-icon">
+								<i class="fas fa-camera"></i>
+							</div>
+							<div class="process-number">04</div>
+						</div>
+						<div class="process-content">
+							<h3>모델 제작</h3>
+							<p>AI 통합 파이프라인을 통한 고품질 이미지 제작합니다.</p>
+						</div>
+					</div>
+					
+					<div class="process-item">
+						<div class="icon-container">
+							<div class="process-icon">
+								<i class="fas fa-sync-alt"></i>
+							</div>
+							<div class="process-number">05</div>
+						</div>
+						<div class="process-content">
+							<h3>수정</h3>
+							<p>전달드린 모델의 피드백을 토대로 수정사항을 반영합니다.</p>
+						</div>
+					</div>
+					
+					<div class="process-item">
+						<div class="icon-container">
+							<div class="process-icon">
+								<i class="fas fa-magic"></i>
+							</div>
+							<div class="process-number">06</div>
+						</div>
+						<div class="process-content">
+							<h3>완성</h3>
+							<p>시안 확정 후 최종 이미지를 전달드립니다.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+	</section>
+	
+	
+	<!-- 가격표 -->
+	
+	<section id="pricing" class="section">
+		<div class="container">
+			<div class="text-center">
                 <h2 class="text-3xl font-bold mb-2">서비스 가격</h2>
                 <p class="text-gray-600 mb-4">목적에 맞는 최적의 패키지를 선택하세요</p>
             </div>
-            
-            <div class="pricing-container">
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <div class="flex justify-center">
-                            <i class="fas fa-star text-yellow-400 text-2xl"></i>
-                        </div>
-                        <h3 class="pricing-title">스탠다드 패키지</h3>
-                        <p class="pricing-subtitle">[디지털 휴먼 이미지 제공]</p>
-                        <div class="pricing-price">₩ 550,000</div>
-                    </div>
-                    
-                    <div class="pricing-features">
-                        <div class="pricing-feature">
-                            <i class="fas fa-check"></i>
-                            <span>등록된 디지털 모델 중 1인 선택</span>
-                        </div>
-                        <div class="pricing-feature">
-                            <i class="fas fa-check"></i>
-                            <span>기획안을 바탕으로 컨셉,구도 설계</span>
-                        </div>
-                        <div class="pricing-feature">
-                            <i class="fas fa-check"></i>
-                            <span>10장의 인물컷 중 3장 선택 제공</span>
-                        </div>
-                        <div class="pricing-feature">
-                            <i class="fas fa-check"></i>
-                            <span>추가 보정 1회</span>
-                        </div>
-                        <div class="pricing-feature">
-                            <i class="fas fa-check"></i>
-                            <span>최종 전달 이후 최종본과 원본 JPG,PNG로 제공</span>
-                        </div>
-                    </div>
-                    
-                    <div class="pricing-license">
-                        <strong>사용 라이센스</strong>
-                        <p>SNS, 블로그, 웹사이트 등 온라인 게시 가능 (비영리/간접광고 용도)</p>
-                    </div>
-                    
-                    <a href="#contact" class="btn-primary pricing-btn">문의하기</a>
-                </div>
-                
-                <div class="pricing-card recommended">
-                    <div class="recommended-badge">인기 상품</div>
-                    <div class="pricing-header">
-                        <div class="flex justify-center">
-                            <i class="fas fa-gem text-pink-400 text-2xl"></i>
-                        </div>
-                        <h3 class="pricing-title">디럭스 패키지</h3>
-                        <p class="pricing-subtitle">[배경 설정 + 이미지 컨설팅]</p>
-                        <div class="pricing-price">₩ 990,000</div>
-                    </div>
-                    
-                    <div class="pricing-features">
-                        <div class="pricing-feature">
-                            <i class="fas fa-check"></i>
-                            <span>모델 직접 커스터마이징 가능</span>
-                        </div>
-                        <div class="pricing-feature">
-                            <i class="fas fa-check"></i>
-                            <span>15장의 인물컷 중 5장 선택 제공</span>
-                        </div>
-                        <div class="pricing-feature">
-                            <i class="fas fa-check"></i>
-                            <span>기획안을 바탕으로 컨셉,구도 설계</span>
-                        </div>
-                        <div class="pricing-feature">
-                            <i class="fas fa-check"></i>
-                            <span>컬러톤 / 배경 조정 1회 추가</span>
-                        </div>
-                        <div class="pricing-feature">
-                            <i class="fas fa-check"></i>
-                            <span>제품 합성 이미지 2장</span>
-                        </div>
-                        <div class="pricing-feature">
-                            <i class="fas fa-check"></i>
-                            <span>최종 전달 이후 최종본과 원본 JPG,PNG로 제공</span>
-                        </div>
-                    </div>
-                    
-                    <div class="pricing-license">
-                        <strong>사용 라이센스</strong>
-                        <p>인쇄물 포함 광고 콘텐츠 사용 가능 페이지, 리타겟 등 유료 노출 포함</p>
-                    </div>
-                    
-                    <a href="#contact" class="btn-primary pricing-btn">문의하기</a>
-                </div>
-                
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <div class="flex justify-center">
-                            <i class="fas fa-crown text-yellow-500 text-2xl"></i>
-                        </div>
-                        <h3 class="pricing-title">프리미엄 패키지</h3>
-                        <p class="pricing-subtitle">[광고형 디지털 휴먼 모델링]</p>
-                        <div class="pricing-price">₩ 1,320,000</div>
-                    </div>
-                    
-                    <div class="pricing-features">
-                        <div class="pricing-feature">
-                            <i class="fas fa-check"></i>
-                            <span>모델 직접 커스터마이징 가능</span>
-                        </div>
-                        <div class="pricing-feature">
-                            <i class="fas fa-check"></i>
-                            <span>20장의 인물컷 중 8장 선택 제공</span>
-                        </div>
-                        <div class="pricing-feature">
-                            <i class="fas fa-check"></i>
-                            <span>표정/포즈 지정 2장 추가</span>
-                        </div>
-                        <div class="pricing-feature">
-                            <i class="fas fa-check"></i>
-                            <span>제품 합성 4장</span>
-                        </div>
-                        <div class="pricing-feature">
-                            <i class="fas fa-check"></i>
-                            <span>실제 외상 합성</span>
-                        </div>
-                        <div class="pricing-feature">
-                            <i class="fas fa-check"></i>
-                            <span>최종 전달 이후 최종본과 원본 JPG,PNG로 제공</span>
-                        </div>
-                    </div>
-                    
-                    <div class="pricing-license">
-                        <strong>사용 라이센스</strong>
-                        <p>옥외 광고물(현판/입간판/전단지 등) 사용 가능 기업 홈페이지 필요 가능</p>
-                    </div>
-                    
-                    <a href="#contact" class="btn-primary pricing-btn">문의하기</a>
-                </div>
-            </div>
-            
-            <div class="mt-16 mb-10">
-                <h3 class="text-2xl font-bold mb-5">서비스 소개</h3>
-                
-                <div class="bg-gray-100 p-6 rounded-lg mb-6">
-                    <p class="mb-3">- 제작된 AI 모델은 포트폴리오로 사용될 수 있습니다. 원치 않으실 경우 미리 말씀해 주세요.</p>
-                    <p class="mb-3">- 실사체, 실존 인물, 공인을 대상을 한 딥페이크 AI모델 생성은 윤리 문제를 우려하여 작업이 거부될 수도 있습니다.</p>
-                    <p class="mb-3">- 원하시는 모든 요구사항 최대한 들어드리려 노력하지만, 생성형 AI이미지 특성상 달라질 수 있다는 점 유의 바랍니다.</p>
-                    <p>- 구매하시기전, 상담을 통해 요구사항을 정해야합니다.</p>
-                </div>
-            </div>
-            
-            <div>
-                <h3 class="text-2xl font-bold mb-5">구매 시 유의사항</h3>
-                
-                <div class="bg-gray-100 p-6 rounded-lg mb-6">
-                    <p class="font-bold mb-3">만족스러운 결과물을 위해, 아래 내용을 미리 준비해 주세요.</p>
-                    <p class="mb-2">- 원하는 서비스(AI광고모델,모델 얼굴 변경 등 AI실사 관련 무엇이든 ok)</p>
-                    <p class="mb-2">- 제품 목업 파일(광고모델 제작시)</p>
-                    <p class="mb-5">- 헤어,의상,배경(협의 必)등의 디테일한 수정은 추가금액이 발생합니다.</p>
-                    
-                    <p class="mb-3">1. 작업 최종본은 png,jpg로 제공됩니다. 원본 psd 파일은 제공이 어렵다는점 양해부탁드립니다.</p>
-                    <p class="mb-2">2. 라이센스 안내</p>
-                    <p class="mb-2">디지털 게시/웹 사용 (Digital/Web Use) 라이센스는 기본으로 제공합니다.</p>
-                    <p class="mb-2">인쇄 매체 사용 (Print Use)</p>
-                    <p class="mb-2">판매용 상품 제작 (Products for Sale)</p>
-                    <p class="mb-2">방송/영상 매체 사용 (Broadcast/Video Use)</p>
-                    <p>등의 라이센스는 협의 부탁드립니다.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Contact Section -->
-    <!-- <section id="contact" class="section"> -->
-        <!-- <div class="container"> -->
-            <!-- <div class="text-center"> -->
-                <!-- <h2 class="text-3xl font-bold mb-2">상담 문의</h2> -->
-                <!-- <p class="text-gray-600 mb-4">프로젝트에 대해 상담해 보세요</p> -->
-            <!-- </div> -->
-            
-            <!-- <form class="contact-form"> -->
-                <!-- <div class="form-group"> -->
-                    <!-- <label class="form-label" for="name">이름</label> -->
-                    <!-- <input type="text" id="name" class="form-control" required> -->
-                <!-- </div> -->
-                
-                <!-- <div class="form-group"> -->
-                    <!-- <label class="form-label" for="email">이메일</label> -->
-                    <!-- <input type="email" id="email" class="form-control" required> -->
-                <!-- </div> -->
-                
-                <!-- <div class="form-group"> -->
-                    <!-- <label class="form-label" for="phone">연락처</label> -->
-                    <!-- <input type="tel" id="phone" class="form-control" placeholder="예: 010-1234-5678"> -->
-                <!-- </div> -->
-                
-                <!-- <div class="form-group"> -->
-                    <!-- <label class="form-label" for="service">관심 서비스</label> -->
-                    <!-- <select id="service" class="form-control"> -->
-                        <!-- <option value="">서비스 선택</option> -->
-                        <!-- <option value="standard">스탠다드 패키지</option> -->
-                        <!-- <option value="deluxe">디럭스 패키지</option> -->
-                        <!-- <option value="premium">프리미엄 패키지</option> -->
-                        <!-- <option value="custom">맞춤 서비스</option> -->
-                    <!-- </select> -->
-                <!-- </div> -->
-                
-                <!-- <div class="form-group"> -->
-                    <!-- <label class="form-label" for="message">문의 내용</label> -->
-                    <!-- <textarea id="message" class="form-control" rows="5" required placeholder="프로젝트에 대한 간략한 설명과 요구사항을 적어주세요."></textarea> -->
-                <!-- </div> -->
-                
-                <!-- <button type="submit" class="btn-primary w-full">상담 신청하기</button> -->
-            <!-- </form> -->
-            
-            <!-- <div class="contact-info"> -->
-                <!-- <div class="contact-item"> -->
-                    <!-- <div class="contact-icon"> -->
-                        <!-- <i class="fas fa-envelope"></i> -->
-                    <!-- </div> -->
-                    <!-- <div> -->
-                        <!-- <h4 class="text-lg font-bold">이메일</h4> -->
-                        <!-- <p>phoenix7jn@gmail.com</p> -->
-                    <!-- </div> -->
-                <!-- </div> -->
-                
-                <!-- <div class="contact-item"> -->
-                    <!-- <div class="contact-icon"> -->
-                        <!-- <i class="fas fa-phone"></i> -->
-                    <!-- </div> -->
-                    <!-- <div> -->
-                        <!-- <h4 class="text-lg font-bold">전화</h4> -->
-                        <!-- <p>010-4903-3367</p> -->
-                    <!-- </div> -->
-                <!-- </div> -->
-                
-                <!-- <div class="contact-item"> -->
-                    <!-- <div class="contact-icon"> -->
-                        <!-- <i class="fas fa-comment"></i> -->
-                    <!-- </div> -->
-                    <!-- <div> -->
-                        <!-- <h4 class="text-lg font-bold">카카오톡</h4> -->
-                        <!-- <p>@anelo</p> -->
-                    <!-- </div> -->
-                <!-- </div> -->
-            <!-- </div> -->
-        <!-- </div> -->
-    <!-- </section> -->
-	
+			
+		<div class="pricing-container">
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+
+			  <!-- ── 스탠다드 ───────────────────── -->
+			  <div class="pricing-card flex flex-col h-full bg-white rounded-2xl shadow-lg">
+
+				<!-- 헤더 -->
+				<div class="pricing-header text-center px-6 pt-8">
+				  <div class="flex justify-center mb-2">
+					<i class="fas fa-star text-yellow-400 text-2xl"></i>
+				  </div>
+				  <h3 class="pricing-title text-xl font-bold">스탠다드 패키지</h3>
+				  <p class="pricing-subtitle text-sm text-gray-500">[단순 썸네일용]</p>
+				  <div class="pricing-price text-3xl font-extrabold mt-4 mb-1">₩ 132,000</div>
+				  <div class="text-sm text-gray-500">/장</div>
+				</div>
+
+				<!-- 항목 -->
+				<ul class="space-y-3 px-6 mt-6 mb-3">
+				  <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i>썸네일용 모델 컷</li>
+				  <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i>헤어·의상·배경 지정</li>
+				  <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i>온라인 라이센스</li>
+				  <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i>수정 2회</li>
+				  <li class="flex items-start text-gray-400"><i class="fas fa-times mt-1 mr-2"></i>인쇄물 라이센스</li>
+				  <li class="flex items-start text-gray-400"><i class="fas fa-times mt-1 mr-2"></i>메이크업 지정</li>
+				  <li class="flex items-start text-gray-400"><i class="fas fa-times mt-1 mr-2"></i>독점 모델 제공</li>
+				</ul>
+r
+				<!-- 하단 문구 (버튼 제거) -->
+				<div class="mt-auto pt-4 border-t border-gray-200 px-6 pb-6 mx-2 my-2">
+				  <p class="text-sm text-gray-600 mt-2">
+					<i class="fas fa-info-circle mr-1"></i> 소규모 온라인 마케팅에 이상적
+				  </p>
+				</div>
+			  </div>
+
+			  <!-- ── 디럭스 (인기) ───────────────── -->
+			  <div class="pricing-card recommended flex flex-col h-full bg-white rounded-2xl shadow-lg">
+				<span class="recommended-badge absolute -top-3 right-4 bg-yellow-400 text-white text-xs font-bold px-2 py-1 rounded">인기 상품</span>
+
+				<!-- 헤더 -->
+				<div class="pricing-header text-center px-6 pt-8">
+				  <div class="flex justify-center mb-2">
+					<i class="fas fa-gem text-pink-400 text-2xl"></i>
+				  </div>
+				  <h3 class="pricing-title text-xl font-bold">디럭스 패키지</h3>
+				  <p class="pricing-subtitle text-sm text-gray-500">[상세페이지용]</p>
+				  <div class="pricing-price text-3xl font-extrabold mt-4 mb-1">₩ 330,000</div>
+				  <div class="text-sm text-gray-500">/장</div>
+				</div>
+
+				<!-- 항목 -->
+				<ul class="space-y-3 px-6 mt-6 mb-3">
+				  <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i>상세페이지용 모델 컷</li>
+				  <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i>톤앤무드 통일</li>
+				  <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i>동일한 모델 출력</li>
+				  <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i>메이크업 가능</li>
+				  <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i>온라인·인쇄물·패키지 라이센스</li>
+				  <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i>수정 3회</li>
+				  <li class="flex items-start text-gray-400"><i class="fas fa-times mt-1 mr-2"></i>독점 모델 제공</li>
+				</ul>
+
+				<!-- 하단 문구 -->
+				<div class="mt-auto pt-4 border-t border-gray-200 px-6 pb-6 mx-2 my-2">
+				  <p class="text-sm text-gray-600 mt-2">
+					<i class="fas fa-info-circle mr-1"></i> 브랜드 마케팅 & 상세페이지에 적합
+				  </p>
+				</div>
+			  </div>
+
+			  <!-- ── 프리미엄 ────────────────────── -->
+			  <div class="pricing-card flex flex-col h-full bg-white rounded-2xl shadow-lg">
+
+				<!-- 헤더 -->
+				<div class="pricing-header text-center px-6 pt-8">
+				  <div class="flex justify-center mb-2">
+					<i class="fas fa-crown text-yellow-500 text-2xl"></i>
+				  </div>
+				  <h3 class="pricing-title text-xl font-bold">프리미엄 패키지</h3>
+				  <p class="pricing-subtitle text-sm text-gray-500">[광고형 디지털 휴먼 모델링]</p>
+				  <div class="pricing-price text-3xl font-extrabold mt-4 mb-1">₩ 1,500,000</div>
+				  <div class="text-sm text-gray-500">/장</div>
+				</div>
+
+				<!-- 항목 -->
+				<ul class="space-y-3 px-6 mt-6">
+				  <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i>고급 커스터마이징 모델</li>
+				  <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i>추가 옵션비용 면제</li>
+				  <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i>디럭스 옵션 모두 포함</li>
+				  <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i>독점 모델 제공</li>
+				  <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i>옥외·TV·해외 라이센스</li>
+				  <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i>무제한 수정</li>
+				</ul>
+
+				<!-- 하단 문구 -->
+				<div class="mt-auto pt-4 border-t border-gray-200 px-6 pb-6 mx-2 my-2">
+				  <p class="text-sm text-gray-600 mt-2">
+					<i class="fas fa-info-circle mr-1"></i> 대형 브랜드 캠페인 & 고급 광고에 적합
+				  </p>
+				</div>
+			  </div>
+
+			</div>
+			
+		</div>
+	</div>
+	</section>
+
 	    
     <!-- Contact Section -->
     <section id="contact" class="section">
@@ -2532,7 +2805,7 @@
                     </div>
                     <div>
                         <h4 class="text-lg font-bold">이메일</h4>
-                        <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ea9a82858f848392dd8084aa8d878b8386c4898587">[email&#160;protected]</a></p>
+                        <p>phoenix7jn@gmail</p>
                     </div>
                 </div>
                 
@@ -2552,15 +2825,143 @@
                     </div>
                     <div>
                         <h4 class="text-lg font-bold">카카오톡</h4>
-                        <p>@anelo</p>
+                        <a href="https://open.kakao.com/o/smOsjV1g">오픈채팅방 바로가기</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+	
+	  <!-- FAQ 섹션 -->
+	  <div class="container">
+        <!-- FAQ 섹션 -->
+		<section id="faq" class="bg-gray-100 py-20">
+		  <div class="max-w-4xl mx-auto px-6">
+			<h2 class="text-3xl font-bold text-center">자주 묻는 질문</h2>
+			<p class="text-lg text-center mb-12">
+			  AI 디지털 휴먼에 대한 궁금증을 해결해 드립니다.
+			</p>
+
+			<!-- FAQ 리스트 -->
+			<div class="divide-y divide-gray-200">
+
+			  <!-- ① -->
+			  <details class="py-6 group">
+				<summary class="cursor-pointer flex items-center justify-between text-xl font-semibold">
+				  <span>AI는 저작권이 없다는데 괜찮을까요?</span>
+				  <i class="fas fa-chevron-down transform transition group-open:rotate-180"></i>
+				</summary>
+				<div class="mt-4 space-y-4 leading-relaxed text-gray-700">
+				  <p>
+					아닙니다. 디지털 휴먼 콘텐츠는 단순 AI 생성물이 아니라
+					<strong>브랜드 기획·연출·리터칭 등 인간의 창작적 개입</strong>이 명확한 창작물로서
+					저작권 보호를 받을 수 있습니다.
+				  </p>
+				  <p>
+					미국 저작권청·중국 페이린 로펌 등 세계 판례에서도
+					“인간의 창작성이 개입된 경우” 저작권을 인정하고 있습니다.
+					사진가의 카메라, 화가의 붓처럼 AI는 ‘도구’일 뿐입니다.
+				  </p>
+				</div>
+			  </details>
+
+			  <!-- ② -->
+			  <details class="py-6 group">
+				<summary class="cursor-pointer flex items-center justify-between text-xl font-semibold">
+				  <span>모델은 진짜 사람인가요?</span>
+				  <i class="fas fa-chevron-down transform transition group-open:rotate-180"></i>
+				</summary>
+				<p class="mt-4 leading-relaxed text-gray-700">
+				  실제 인물이 아닌 AI 생성 디지털 휴먼입니다.
+				  초상권 문제 없이 자유롭게 상업적으로 활용할 수 있습니다.
+				</p>
+			  </details>
+
+			  <!-- ③ -->
+			  <details class="py-6 group">
+				<summary class="cursor-pointer flex items-center justify-between text-xl font-semibold">
+				  <span>이미지 사용 범위는 어떻게 되나요?</span>
+				  <i class="fas fa-chevron-down transform transition group-open:rotate-180"></i>
+				</summary>
+				<p class="mt-4 leading-relaxed text-gray-700">
+				  기본적으로 온라인(쇼핑몰·SNS 등)에 사용 가능하며,
+				  인쇄물·옥외광고 등은 선택한 패키지에 따라 달라집니다.
+				  구체적인 용도는 상담 시 안내드립니다.
+				</p>
+			  </details>
+
+			  <!-- ④ -->
+			  <details class="py-6 group">
+				<summary class="cursor-pointer flex items-center justify-between text-xl font-semibold">
+				  <span>우리 브랜드 스타일로 만들 수 있나요?</span>
+				  <i class="fas fa-chevron-down transform transition group-open:rotate-180"></i>
+				</summary>
+				<p class="mt-4 leading-relaxed text-gray-700">
+				  가능합니다. 무드보드·기존 비주얼을 참고해
+				  타깃·색감·톤앤무드에 맞춘 맞춤 연출을 제공합니다.
+				</p>
+			  </details>
+
+			  <!-- ⑤ -->
+			  <details class="py-6 group">
+				<summary class="cursor-pointer flex items-center justify-between text-xl font-semibold">
+				  <span>한 명의 모델로 여러 이미지 만들 수 있나요?</span>
+				  <i class="fas fa-chevron-down transform transition group-open:rotate-180"></i>
+				</summary>
+				<p class="mt-4 leading-relaxed text-gray-700">
+				  네. 동일 모델의 다양한 포즈·의상·배경을 생성해
+				  시리즈형 광고나 멀티 채널 마케팅에 활용할 수 있습니다.
+				</p>
+			  </details>
+
+			  <!-- ⑥ -->
+			  <details class="py-6 group">
+				<summary class="cursor-pointer flex items-center justify-between text-xl font-semibold">
+				  <span>작업 기간은 얼마나 걸리나요?</span>
+				  <i class="fas fa-chevron-down transform transition group-open:rotate-180"></i>
+				</summary>
+				<p class="mt-4 leading-relaxed text-gray-700">
+				  단일 컷 기준 3–5일, 3컷 세트 5–7일 정도입니다.
+				  급한 일정은 48 시간 내 납품(추가 비용)도 가능합니다.
+				</p>
+			  </details>
+
+			  <!-- ⑦ -->
+			  <details class="py-6 group">
+				<summary class="cursor-pointer flex items-center justify-between text-xl font-semibold">
+				  <span>마음에 들지 않으면 환불이 가능한가요?</span>
+				  <i class="fas fa-chevron-down transform transition group-open:rotate-180"></i>
+				</summary>
+				<p class="mt-4 leading-relaxed text-gray-700">
+				  제작 단계에 따라 다릅니다.<br>
+				  ‑ 모델 제작 전: 100 % 환불<br>
+				  ‑ 모델 제작 후, 제품 합성 전: 50 % 환불<br>
+				  자세한 사항은 환불 정책을 확인해 주세요.
+				</p>
+			  </details>
+
+			  <!-- ⑧ -->
+			  <details class="py-6 group">
+				<summary class="cursor-pointer flex items-center justify-between text-xl font-semibold">
+				  <span>저작권은 누구에게 있나요?</span>
+				  <i class="fas fa-chevron-down transform transition group-open:rotate-180"></i>
+				</summary>
+				<p class="mt-4 leading-relaxed text-gray-700">
+				  이미지 사용권은 계약된 라이선스 범위 내에서 고객에게 부여되며,
+				  원본 저작권은 <strong>ANELO</strong>에 있습니다.
+				  독점 사용을 원하실 경우 별도 협의가 필요합니다.
+				</p>
+			  </details>
+
+			</div>
+		  </div>
+		</section>
+
+	</div>
     
     <!-- Form notification popup -->
-    <div class="notification-backdrop" id="notificationBackdrop"></div>
+
+	<div class="notification-backdrop" id="notificationBackdrop"></div>
     <div class="form-notification" id="formNotification">
         <div class="notification-icon success" id="successIcon">
             <i class="fas fa-check-circle"></i>
@@ -2572,33 +2973,7 @@
         <p class="notification-message" id="notificationMessage">상담 신청이 성공적으로 접수되었습니다. 빠른 시일 내에 연락드리겠습니다.</p>
         <button class="notification-btn" id="notificationBtn">확인</button>
     </div>
-    
-    
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 Anelo. All rights reserved.</p>
-            
-            <div class="footer-links">
-                <a href="#" class="footer-link">개인정보 처리방침</a>
-                <a href="#" class="footer-link">이용약관</a>
-                <a href="#" class="footer-link">서비스 소개</a>
-            </div>
-            
-            <div class="social-links">
-                <a href="#" class="social-link">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="social-link">
-                    <i class="fab fa-youtube"></i>
-                </a>
-                <a href="#" class="social-link">
-                    <i class="fab fa-facebook"></i>
-                </a>
-            </div>
-        </div>
-    </footer>
-    
+	   
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 	
 	<script>
