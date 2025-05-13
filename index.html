@@ -1665,7 +1665,7 @@
     </style>
 </head>
 <body>
-    <!-- <!-- Header & Navigation -->
+    <!-- Header & Navigation -->
     <!-- <header class="header"> -->
         <!-- <div class="container nav-container"> -->
             <!-- <a href="#" class="logo">Ane<span>lo</span></a> -->
@@ -1685,7 +1685,7 @@
         <!-- </div> -->
     <!-- </header> -->
     
-    <!-- <!-- Mobile Menu -->
+    <!-- Mobile Menu -->
     <!-- <div class="mobile-menu"> -->
         <!-- <button class="mobile-menu-close"> -->
             <!-- <i class="fas fa-times"></i> -->
@@ -3207,7 +3207,7 @@
                     </div>
                     <div>
                         <h4 class="text-lg font-bold">이메일</h4>
-                        <p>phoenix7jn@gmail</p>
+                        <p>phoenix7jn@gmail.com</p>
                     </div>
                 </div>
                 
@@ -3375,39 +3375,39 @@
         <p class="notification-message" id="notificationMessage">상담 신청이 성공적으로 접수되었습니다. 빠른 시일 내에 연락드리겠습니다.</p>
         <button class="notification-btn" id="notificationBtn">확인</button>
     </div>
-	   
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+	
+	
 	
 	<script>
         // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.header');
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
+        <!-- window.addEventListener('scroll', function() { -->
+            <!-- const header = document.querySelector('.header'); -->
+            <!-- if (window.scrollY > 100) { -->
+                <!-- header.classList.add('scrolled'); -->
+            <!-- } else { -->
+                <!-- header.classList.remove('scrolled'); -->
+            <!-- } -->
+        <!-- }); -->
         
-        // Mobile menu toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const mobileMenuClose = document.querySelector('.mobile-menu-close');
-        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+        <!-- // Mobile menu toggle -->
+        <!-- const mobileMenuBtn = document.querySelector('.mobile-menu-btn'); -->
+        <!-- const mobileMenu = document.querySelector('.mobile-menu'); -->
+        <!-- const mobileMenuClose = document.querySelector('.mobile-menu-close'); -->
+        <!-- const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link'); -->
         
-        mobileMenuBtn.addEventListener('click', function() {
-            mobileMenu.classList.add('active');
-        });
+        <!-- mobileMenuBtn.addEventListener('click', function() { -->
+            <!-- mobileMenu.classList.add('active'); -->
+        <!-- }); -->
         
-        mobileMenuClose.addEventListener('click', function() {
-            mobileMenu.classList.remove('active');
-        });
+        <!-- mobileMenuClose.addEventListener('click', function() { -->
+            <!-- mobileMenu.classList.remove('active'); -->
+        <!-- }); -->
         
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                mobileMenu.classList.remove('active');
-            });
-        });
+        <!-- mobileMenuLinks.forEach(link => { -->
+            <!-- link.addEventListener('click', function() { -->
+                <!-- mobileMenu.classList.remove('active'); -->
+            <!-- }); -->
+        <!-- }); -->
         
         // Portfolio tabs
         const portfolioTabs = document.querySelectorAll('.portfolio-tab');
@@ -3508,6 +3508,8 @@
                 }
             });
         });
+		
+
         
         // Contact form with FormSubmit (AJAX implementation)
         const contactForm = document.getElementById('contactForm');
@@ -3518,6 +3520,8 @@
         const errorIcon = document.getElementById('errorIcon');
         const notificationTitle = document.getElementById('notificationTitle');
         const notificationMessage = document.getElementById('notificationMessage');
+		
+		
         
         // Close notification
         function closeNotification() {
